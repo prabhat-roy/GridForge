@@ -1,0 +1,10 @@
+clusterName: gridforge.teleport.internal
+authentication:
+  type: github
+  githubConnector:
+    name: github
+    redirectUrl: https://teleport.gridforge.internal/v1/webapi/github/callback
+kubeClusterName: gridforge-prod
+ingress:
+  enabled: true
+  hostname: teleport.gridforge.internal

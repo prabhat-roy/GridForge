@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: saga-orchestrator
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: saga-orchestrator, gridforge.io/domain: platform }
+data:
+  LOG_LEVEL: info
+  PORT: "51001"

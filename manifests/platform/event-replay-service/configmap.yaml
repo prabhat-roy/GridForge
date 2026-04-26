@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: event-replay-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: event-replay-service, gridforge.io/domain: platform }
+data:
+  LOG_LEVEL: info
+  PORT: "51009"

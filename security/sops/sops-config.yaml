@@ -1,0 +1,7 @@
+creation_rules:
+  - path_regex: secrets/gridforge/.*\.yaml
+    kms: arn:aws:kms:us-east-1:111111111111:alias/gridforge-sops
+  - path_regex: secrets/gridforge/gcp/.*\.yaml
+    gcp_kms: projects/gridforge-prod/locations/global/keyRings/gridforge/cryptoKeys/sops
+  - path_regex: secrets/gridforge/azure/.*\.yaml
+    azure_keyvault: https://gridforge-kv.vault.azure.net/keys/sops/abc123

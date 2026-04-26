@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: file-upload-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: file-upload-service, gridforge.io/domain: platform }
+data:
+  LOG_LEVEL: info
+  PORT: "51011"
