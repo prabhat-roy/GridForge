@@ -1,0 +1,7 @@
+﻿# ZITADEL — developer-platform auth (API keys, OAuth clients, dev portal SSO)
+image: { repository: ghcr.io/zitadel/zitadel, tag: latest }
+zitadel:
+  externalDomain: zitadel.gridforge.internal
+  externalSecure: true
+  database: { postgres: { host: postgres.gridforge.svc, database: zitadel } }
+ingress: { enabled: true, hosts: [{ host: zitadel.gridforge.internal }] }

@@ -1,0 +1,3 @@
+﻿# Eclipse Volttron — DER orchestration platform
+image: { repository: volttron/volttron, tag: latest }
+volttron: { agents: [forwarder, historian, market-service, listener] }

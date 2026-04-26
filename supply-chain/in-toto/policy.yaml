@@ -1,0 +1,9 @@
+﻿# in-toto layout — supply-chain step attestations for GridForge
+expires: "2027-01-01T00:00:00Z"
+keys: { project-key: { keyid: gridforge-key, keytype: ed25519, scheme: ed25519 } }
+steps:
+  - { name: source, expected_command: ["git", "clone"], pubkeys: [gridforge-key] }
+  - { name: build, expected_command: ["docker", "build"], pubkeys: [gridforge-key] }
+  - { name: test, expected_command: ["make", "test"], pubkeys: [gridforge-key] }
+inspect:
+  - { name: signed-image, run: ["cosign", "verify"], expected_materials: [], expected_products: [] }

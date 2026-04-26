@@ -1,0 +1,6 @@
+﻿# Sourcegraph (OSS) — universal code search across GridForge
+image: { repository: sourcegraph/server, tag: 5.5.0 }
+sourcegraph:
+  externalURL: https://sourcegraph.gridforge.internal
+  repositoriesToAdd: [github.com/prabhat-roy/GridForge]
+ingress: { enabled: true, hosts: [{ host: sourcegraph.gridforge.internal }] }

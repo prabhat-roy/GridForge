@@ -1,0 +1,3 @@
+﻿# OpenADR — automated demand-response server
+image: { repository: enernoc/openadr-vtn-ven, tag: latest }
+openadr: { vtn: { enabled: true } }

@@ -1,7 +1,9 @@
-apiVersion: backstage.io/v1alpha1
+﻿apiVersion: backstage.io/v1alpha1
 kind: System
-metadata:
-  name: gridforge
-  description: Smart Grid & Energy Management Platform
-spec:
-  owner: gridforge-platform
+metadata: { name: gridforge, description: GridForge enterprise platform }
+spec: { owner: platform-team, domain: gridforge }
+---
+apiVersion: backstage.io/v1alpha1
+kind: Domain
+metadata: { name: gridforge }
+spec: { owner: platform-team }

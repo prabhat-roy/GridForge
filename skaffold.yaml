@@ -1,9 +1,16 @@
+﻿# Skaffold pipeline for GridForge
 apiVersion: skaffold/v4beta11
 kind: Config
-metadata:
-  name: gridforge
+metadata: { name: gridforge }
 build:
-  artifacts: []   # filled in per service in src/<domain>/<service>/skaffold.yaml
+  artifacts:
+    - { image: gridforge/api-gateway, context: src/api-gateway }
+    - { image: gridforge/identity-service, context: src/identity-service }
+  local: { push: false }
 deploy:
   helm:
-    releases: []  # filled in per service
+    releases:
+      - { name: api-gateway, chartPath: helm/charts/api-gateway, namespace: gridforge }
+profiles:
+  - name: prod
+    deploy: { kubectl: { manifests: ["manifests/prod/*.yaml"] } }

@@ -1,0 +1,3 @@
+﻿# CoMPAS — IEC 61850 system configuration + SCL management (LF Energy)
+image: { repository: lfenergy/compas-scl-data-service, tag: latest }
+compas: { keycloak: { enabled: true }, scl: { storage: { backend: basex } } }

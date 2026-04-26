@@ -1,0 +1,3 @@
+﻿# SCADA-LTS — open SCADA bridge
+image: { repository: scadalts/scadalts, tag: latest }
+scadalts: { mysql: { enabled: true }, modbus: { enabled: true }, opcua: { enabled: true } }
