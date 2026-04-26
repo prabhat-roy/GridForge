@@ -1,0 +1,8 @@
+# Routinator — RPKI validator for telecom/grid network security
+image: { repository: nlnetlabs/routinator, tag: v0.13.2 }
+service:  { type: ClusterIP, port: 9556 }
+metrics:  { enabled: true }
+storage:
+  enabled: true
+  size: 5Gi
+  storageClass: gp3
