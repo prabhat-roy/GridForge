@@ -1,0 +1,11 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata: { name: gridforge, namespace: argocd }
+spec:
+  description: GridForge platform applications
+  sourceRepos: [https://github.com/prabhat-roy/GridForge.git]
+  destinations:
+    - { namespace: gridforge,    server: https://kubernetes.default.svc }
+    - { namespace: 'gridforge-*', server: https://kubernetes.default.svc }
+  clusterResourceWhitelist:    [{ group: '*', kind: '*' }]
+  namespaceResourceWhitelist:  [{ group: '*', kind: '*' }]

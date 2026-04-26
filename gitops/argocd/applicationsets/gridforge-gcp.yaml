@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata: { name: gridforge-gcp, namespace: argocd }
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/prabhat-roy/GridForge.git
+        revision: HEAD
+        directories: [{ path: helm/charts/* }]
+  template:
+    metadata:
+      name: '{{path.basename}}-gcp'
+      labels: { cloud: gcp, gridforge.io/managed-by: argocd }
+    spec:
+      project: gridforge
+      source:
+        repoURL: https://github.com/prabhat-roy/GridForge.git
+        targetRevision: HEAD
+        path: '{{path}}'
+        helm:
+          valueFiles: [values.yaml, values-gcp.yaml]
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: gridforge
+      syncPolicy:
+        automated: { prune: true, selfHeal: true }
+        syncOptions: [CreateNamespace=true, ServerSideApply=true]

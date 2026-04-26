@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Sensor
+metadata: { name: ci-trigger, namespace: argo-events }
+spec:
+  dependencies:
+    - { name: push, eventSourceName: github, eventName: gridforge }
+  triggers:
+    - template:
+        name: ci-build
+        argoWorkflow:
+          group: argoproj.io
+          version: v1alpha1
+          resource: workflows
+          operation: submit
+          source:
+            resource:
+              apiVersion: argoproj.io/v1alpha1
+              kind: Workflow
+              metadata: { generateName: gridforge-ci- }
+              spec:
+                workflowTemplateRef: { name: gridforge-ci-build }

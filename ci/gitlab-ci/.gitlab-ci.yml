@@ -1,0 +1,27 @@
+stages: [build, scan, sign, push]
+variables:
+  REGISTRY: harbor.gridforge.internal
+  COSIGN_EXPERIMENTAL: '1'
+
+.kaniko_build:
+  stage: build
+  image: gcr.io/kaniko-project/executor:debug
+  script:
+    - >-
+      /kaniko/executor
+      --context "$CI_PROJECT_DIR/$SERVICE_DIR"
+      --dockerfile "$CI_PROJECT_DIR/$SERVICE_DIR/Dockerfile"
+      --destination "${REGISTRY}/gridforge/${SERVICE_NAME}:${CI_COMMIT_SHA}"
+      --cache=true
+
+.trivy_scan:
+  stage: scan
+  image: aquasec/trivy:latest
+  script:
+    - trivy image --exit-code 1 --severity CRITICAL,HIGH "${REGISTRY}/gridforge/${SERVICE_NAME}:${CI_COMMIT_SHA}"
+
+.cosign_sign:
+  stage: sign
+  image: gcr.io/projectsigstore/cosign:latest
+  script:
+    - cosign sign --yes "${REGISTRY}/gridforge/${SERVICE_NAME}:${CI_COMMIT_SHA}"
