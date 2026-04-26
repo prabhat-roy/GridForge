@@ -1,0 +1,11 @@
+exposureType: ingress
+expose:
+  ingress:
+    hosts: { core: harbor.gridforge.internal }
+    annotations: { kubernetes.io/ingress.class: traefik }
+externalURL: https://harbor.gridforge.internal
+persistence:
+  persistentVolumeClaim:
+    registry: { storageClass: gp3, size: 2Ti }
+trivy: { enabled: true }
+chartmuseum: { enabled: true }

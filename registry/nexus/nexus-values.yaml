@@ -1,0 +1,1 @@
+nexus: { hostname: nexus.gridforge.internal, storage: { size: 500Gi, storageClass: gp3 } }

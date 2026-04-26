@@ -1,0 +1,21 @@
+app:
+  title: GridForge Developer Portal
+  baseUrl: http://localhost:3000
+
+organization: { name: GridForge }
+
+backend:
+  baseUrl: http://localhost:7007
+  listen: { port: 7007 }
+  cors:
+    origin: http://localhost:3000
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+
+integrations:
+  github:
+    - { host: github.com, token: ${GITHUB_TOKEN} }
+
+catalog:
+  rules: [{ allow: [Component, System, API, Resource, Location, Group, User] }]
+  locations: [{ type: file, target: ../../catalog-info.yaml }]

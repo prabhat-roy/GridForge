@@ -1,0 +1,9 @@
+config_version: 3
+datasources:
+  gridforge_postgres:
+    class_name: Datasource
+    execution_engine: { class_name: SqlAlchemyExecutionEngine, connection_string: "${GRIDFORGE_PG_DSN}" }
+stores:
+  expectations_store: { class_name: ExpectationsStore, store_backend: { class_name: TupleFilesystemStoreBackend, base_directory: expectations } }
+data_docs_sites:
+  local_site: { class_name: SiteBuilder, store_backend: { class_name: TupleFilesystemStoreBackend, base_directory: uncommitted/data_docs/local_site } }

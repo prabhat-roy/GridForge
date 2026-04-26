@@ -1,0 +1,19 @@
+apisix:
+  node_listen: 9080
+  enable_admin: true
+  admin_key:
+    - { name: admin, key: ${APISIX_ADMIN_KEY}, role: admin }
+  ssl: { enable: true, listen_port: 9443 }
+
+etcd:
+  host: ["http://etcd:2379"]
+  prefix: /apisix
+  timeout: 30
+
+plugins:
+  - jwt-auth
+  - openid-connect
+  - limit-req
+  - prometheus
+  - opentelemetry
+  - cors

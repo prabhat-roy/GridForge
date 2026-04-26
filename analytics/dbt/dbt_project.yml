@@ -1,0 +1,12 @@
+name: gridforge
+version: 1.0.0
+profile: gridforge
+model-paths: [models]
+target-path: target
+clean-targets: [target, dbt_packages]
+
+models:
+  gridforge:
+    staging:    { +materialized: view }
+    grid:       { +materialized: incremental }
+    analytics:  { +materialized: table }

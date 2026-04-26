@@ -1,0 +1,25 @@
+openapi: 3.1.0
+info: { title: GridForge Customer Self-Service API, version: 0.1.0 }
+servers:
+  - { url: https://api.gridforge.com }
+paths:
+  /healthz:
+    get:
+      operationId: getHealth
+      responses: { '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/Health' } } } } }
+  /v1/usage/me:
+    get:
+      operationId: getMyUsage
+      security: [{ customerAuth: [] }]
+      responses: { '200': { description: OK, content: { application/json: { schema: { $ref: '#/components/schemas/UsageResponse' } } } } }
+components:
+  securitySchemes:
+    customerAuth: { type: openIdConnect, openIdConnectUrl: https://keycloak.gridforge.com/realms/gridforge/.well-known/openid-configuration }
+  schemas:
+    Health: { type: object, properties: { status: { type: string } } }
+    UsageResponse:
+      type: object
+      properties:
+        kwh_this_month: { type: number }
+        cost_this_month_minor: { type: integer }
+        currency: { type: string }

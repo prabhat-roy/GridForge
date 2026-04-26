@@ -1,0 +1,12 @@
+version: 3
+projects:
+  - dir: infra/terraform/aws
+    workspace: prod
+    autoplan: { when_modified: ["*.tf","*.tfvars"], enabled: true }
+    apply_requirements: [approved, mergeable]
+  - dir: infra/terraform/gcp
+    workspace: prod
+    autoplan: { when_modified: ["*.tf","*.tfvars"], enabled: true }
+  - dir: infra/terraform/azure
+    workspace: prod
+    autoplan: { when_modified: ["*.tf","*.tfvars"], enabled: true }

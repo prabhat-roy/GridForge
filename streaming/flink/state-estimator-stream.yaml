@@ -1,0 +1,12 @@
+apiVersion: flink.apache.org/v1beta1
+kind: FlinkDeployment
+metadata: { name: gridforge-state-estimator, namespace: streaming }
+spec:
+  image: flink:1.20
+  flinkVersion: v1_20
+  jobManager:  { resource: { memory: "2Gi", cpu: 1 } }
+  taskManager: { resource: { memory: "4Gi", cpu: 2 } }
+  job:
+    jarURI: local:///opt/gridforge/flink-jobs.jar
+    entryClass: com.gridforge.streaming.StateEstimator
+    args: ["--bootstrap","kafka.messaging:9092"]

@@ -1,0 +1,16 @@
+{
+  "name": "gridforge-customer-postgres",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "${POSTGRES_HOST}",
+    "database.port": "5432",
+    "database.user": "${POSTGRES_USER}",
+    "database.password": "${POSTGRES_PASSWORD}",
+    "database.dbname": "gridforge",
+    "topic.prefix": "customer",
+    "publication.name": "gridforge_pub",
+    "slot.name": "gridforge_slot",
+    "snapshot.mode": "exported"
+  }
+}

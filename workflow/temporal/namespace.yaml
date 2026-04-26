@@ -1,0 +1,8 @@
+apiVersion: temporal.io/v1beta1
+kind: TemporalNamespace
+metadata: { name: gridforge, namespace: temporal-system }
+spec:
+  retentionPeriod: 30d
+  archival:
+    history:    { state: enabled, uri: s3://gridforge-temporal-archive/history }
+    visibility: { state: enabled, uri: s3://gridforge-temporal-archive/visibility }

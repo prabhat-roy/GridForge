@@ -1,0 +1,7 @@
+image: { repository: cachethq/docker, tag: "latest" }
+env:
+  - { name: APP_KEY, valueFrom: { secretKeyRef: { name: cachet-secrets, key: app-key } } }
+  - { name: DB_DRIVER, value: pgsql }
+  - { name: DB_HOST,   value: postgres-cachet }
+  - { name: DB_DATABASE, value: cachet }
+ingress: { enabled: true, hosts: [{ host: status.gridforge.com, paths: [{ path: "/", pathType: Prefix }] }] }

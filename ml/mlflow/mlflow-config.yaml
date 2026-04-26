@@ -1,0 +1,2 @@
+backend_store_uri: postgresql://mlflow:${MLFLOW_DB_PASSWORD}@postgres-mlflow:5432/mlflow
+default_artifact_root: s3://gridforge-mlflow-artifacts

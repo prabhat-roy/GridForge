@@ -1,0 +1,8 @@
+replicaCount: 2
+image: { repository: unleashorg/unleash-server, tag: "6.4" }
+postgresql:
+  enabled: true
+  auth: { database: unleash, username: unleash, existingSecret: unleash-postgres }
+ingress:
+  enabled: true
+  hosts: [{ host: flags.gridforge.internal, paths: [{ path: "/", pathType: Prefix }] }]

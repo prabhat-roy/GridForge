@@ -1,0 +1,5 @@
+image: { repository: grafana/oncall, tag: "v1.10.4" }
+externalPostgresql: { host: postgres-oncall, database: oncall, user: oncall, existingSecret: oncall-postgres }
+externalRedis: { host: redis-oncall }
+externalRabbitMq: { host: rabbitmq-oncall, user: oncall }
+ingress: { enabled: true, hosts: [{ host: oncall.gridforge.internal, paths: [{ path: "/", pathType: Prefix }] }] }
