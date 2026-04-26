@@ -1,0 +1,14 @@
+﻿{
+  "namespace": "com.gridforge.events",
+  "type": "record",
+  "name": "DrEventSettled",
+  "doc": "Domain event: dr.event.settled",
+  "fields": [
+    { "name": "event_id", "type": "string" },
+    { "name": "event_time_ms", "type": "long", "logicalType": "timestamp-millis" },
+    { "name": "tenant_id", "type": "string" },
+    { "name": "actor_id", "type": ["null", "string"], "default": null },
+    { "name": "correlation_id", "type": "string" },
+    { "name": "payload", "type": { "type": "map", "values": "string" } }
+  ]
+}
