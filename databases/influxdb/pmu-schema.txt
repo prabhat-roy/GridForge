@@ -1,0 +1,5 @@
+# GridForge PMU (Phasor Measurement Unit) data — sub-second grid telemetry.
+# Bucket: gridforge_pmu  Retention: 7d  Shard: 1h
+# Measurement: phasor
+# Tags: pmu_id, substation, phase
+# Fields: voltage_pu (float), current_pu (float), angle_deg (float), frequency_hz (float)

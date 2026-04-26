@@ -1,0 +1,12 @@
+apiVersion: policy.sigstore.dev/v1beta1
+kind: ClusterImagePolicy
+metadata: { name: gridforge-cosign }
+spec:
+  images: [{ glob: "harbor.gridforge.internal/gridforge/*" }]
+  authorities:
+    - name: keyless-github
+      keyless:
+        url: https://fulcio.sigstore.dev
+        identities:
+          - issuer: https://token.actions.githubusercontent.com
+            subjectRegExp: 'https://github.com/prabhat-roy/GridForge/.*'

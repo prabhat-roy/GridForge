@@ -1,0 +1,12 @@
+# GridForge-specific: IT/OT separation. OT-zone services (SCADA, AMI) only accept
+# commands from the signed gateway, never direct ingress from IT.
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: { name: ot-zone-isolation, namespace: gridforge-grid-ops }
+spec:
+  podSelector: { matchLabels: { gridforge.io/zone: ot } }
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: gridforge } }
+          podSelector: { matchLabels: { app.kubernetes.io/name: scada-gateway } }

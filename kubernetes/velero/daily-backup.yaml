@@ -1,0 +1,9 @@
+apiVersion: velero.io/v1
+kind: Schedule
+metadata: { name: gridforge-daily, namespace: velero }
+spec:
+  schedule: "0 2 * * *"
+  template:
+    includedNamespaces: [gridforge, gridforge-grid-ops, gridforge-ami, gridforge-trading, gridforge-derms]
+    snapshotVolumes: true
+    ttl: 720h0m0s

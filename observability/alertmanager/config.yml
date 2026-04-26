@@ -1,0 +1,13 @@
+global: { resolve_timeout: 5m }
+
+route:
+  receiver: gridforge-default
+  group_by: [app, severity]
+  routes:
+    - { matchers: [severity="critical"], receiver: pagerduty, continue: true }
+    - { matchers: [team=~".+"], receiver: slack-team, group_by: [team] }
+
+receivers:
+  - { name: gridforge-default, slack_configs: [{ api_url: ${SLACK_WEBHOOK}, channel: '#gridforge-alerts' }] }
+  - { name: pagerduty,        pagerduty_configs: [{ service_key: ${PAGERDUTY_KEY} }] }
+  - { name: slack-team,       slack_configs: [{ api_url: ${SLACK_WEBHOOK}, channel: '#gridforge-{{ .CommonLabels.team }}' }] }

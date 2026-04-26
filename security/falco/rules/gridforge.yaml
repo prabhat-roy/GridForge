@@ -1,0 +1,20 @@
+- rule: Unexpected outbound from grid-ops
+  desc: Detects unexpected egress destinations from OT-zone workloads (NERC CIP).
+  condition: >
+    evt.type=connect and evt.dir=< and
+    container and k8s_ns_name="gridforge-grid-ops" and
+    not fd.sip in (allowed_grid_ops_egress)
+  output: "Unexpected egress from %container.name to %fd.sip:%fd.sport"
+  priority: WARNING
+  tags: [network, ot, nerc-cip]
+
+- rule: SCADA command without operator 2FA
+  desc: Direct SCADA command issued bypassing operator 2FA.
+  condition: >
+    fd.name endswith "/v1/scada/command" and not k8s.pod.label.gridforge.io/2fa-verified="true"
+  output: "SCADA command without 2FA: %container.name"
+  priority: CRITICAL
+  tags: [scada, gridforge, nerc-cip]
+
+- list: allowed_grid_ops_egress
+  items: ["10.0.0.0/8"]

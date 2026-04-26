@@ -1,0 +1,15 @@
+# GridForge: scale AMI meter-ingest based on Kafka consumer lag (15-min reads from millions of meters)
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata: { name: meter-ingest, namespace: gridforge }
+spec:
+  scaleTargetRef: { name: meter-ingest }
+  minReplicaCount: 3
+  maxReplicaCount: 100
+  triggers:
+    - type: kafka
+      metadata:
+        bootstrapServers: kafka.messaging:9092
+        consumerGroup: ami-meter-ingest
+        topic: ami.meter.read.captured
+        lagThreshold: "1000"

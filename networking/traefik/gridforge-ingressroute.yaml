@@ -1,0 +1,17 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata: { name: gridforge, namespace: gridforge }
+spec:
+  entryPoints: [websecure]
+  routes:
+    - match: Host(`api.gridforge.com`)
+      kind: Rule
+      services: [{ name: api-gateway, port: 50000 }]
+      middlewares: [{ name: gridforge-rate-limit }]
+  tls: { secretName: gridforge-tls }
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata: { name: gridforge-rate-limit, namespace: gridforge }
+spec:
+  rateLimit: { average: 100, burst: 200 }

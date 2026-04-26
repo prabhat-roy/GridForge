@@ -1,0 +1,14 @@
+auth_enabled: false
+server: { http_listen_port: 3100 }
+schema_config:
+  configs:
+    - from: 2025-01-01
+      store: tsdb
+      object_store: s3
+      schema: v13
+      index: { prefix: gridforge_, period: 24h }
+storage_config:
+  aws: { s3: gridforge-loki, region: us-east-1 }
+limits_config:
+  retention_period: 8760h
+  reject_old_samples: true

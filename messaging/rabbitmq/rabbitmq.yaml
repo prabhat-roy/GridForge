@@ -1,0 +1,9 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata: { name: gridforge, namespace: messaging }
+spec:
+  replicas: 3
+  resources:
+    requests: { cpu: 500m, memory: 2Gi }
+    limits:   { cpu: 2,    memory: 4Gi }
+  persistence: { storageClassName: gp3, storage: 50Gi }

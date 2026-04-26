@@ -1,0 +1,20 @@
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata: { name: gridforge-default-deny, namespace: gridforge }
+spec:
+  action: DENY
+  rules: [{}]
+---
+apiVersion: security.istio.io/v1
+kind: AuthorizationPolicy
+metadata: { name: allow-from-platform, namespace: gridforge }
+spec:
+  action: ALLOW
+  rules:
+    - from:
+        - source:
+            principals:
+              - cluster.local/ns/gridforge/sa/api-gateway
+              - cluster.local/ns/gridforge/sa/ops-bff
+              - cluster.local/ns/gridforge/sa/customer-bff
+              - cluster.local/ns/gridforge/sa/trader-bff

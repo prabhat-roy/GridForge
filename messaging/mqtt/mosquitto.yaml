@@ -1,0 +1,17 @@
+# GridForge: MQTT broker for AMI smart-meter ingest at scale.
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: mosquitto, namespace: messaging }
+spec:
+  replicas: 3
+  selector: { matchLabels: { app: mosquitto } }
+  template:
+    metadata: { labels: { app: mosquitto } }
+    spec:
+      containers:
+        - name: mosquitto
+          image: eclipse-mosquitto:2.0
+          ports: [{ containerPort: 1883, name: mqtt }, { containerPort: 8883, name: mqtts }]
+          volumeMounts: [{ name: config, mountPath: /mosquitto/config }]
+      volumes:
+        - { name: config, configMap: { name: mosquitto-config } }

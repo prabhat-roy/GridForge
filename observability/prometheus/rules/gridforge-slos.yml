@@ -1,0 +1,24 @@
+groups:
+  - name: gridforge-slo-burn
+    rules:
+      - alert: GridForgeErrorBudgetBurn
+        expr: |
+          (sum(rate(http_requests_total{namespace="gridforge",status=~"5.."}[5m])) by (app)
+           /
+           sum(rate(http_requests_total{namespace="gridforge"}[5m])) by (app)) > 0.01
+        for: 5m
+        labels: { severity: critical }
+        annotations: { summary: "Error rate >1% for {{ $labels.app }}" }
+
+  - name: gridforge-grid-specific
+    rules:
+      - alert: AmiIngestionLag
+        expr: kafka_consumergroup_lag{consumergroup="ami-meter-ingest"} > 10000
+        for: 5m
+        labels: { severity: critical, team: ami }
+        annotations: { summary: "AMI meter ingestion lag >10k messages" }
+
+      - alert: ScadaCommandWithoutMfa
+        expr: increase(gridforge_scada_command_no_mfa_total[5m]) > 0
+        labels: { severity: critical, team: grid-ops }
+        annotations: { summary: "SCADA command issued without 2FA — investigate immediately" }

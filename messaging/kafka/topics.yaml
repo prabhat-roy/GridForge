@@ -1,0 +1,21 @@
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata: { name: ami-meter-read-captured, namespace: kafka, labels: { strimzi.io/cluster: gridforge-kafka } }
+spec:
+  partitions: 24
+  replicas: 3
+  config: { retention.ms: 2592000000, compression.type: zstd }
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata: { name: trading-bid-settled, namespace: kafka, labels: { strimzi.io/cluster: gridforge-kafka } }
+spec:
+  partitions: 12
+  replicas: 3
+---
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaTopic
+metadata: { name: derms-flexibility-event-dispatched, namespace: kafka, labels: { strimzi.io/cluster: gridforge-kafka } }
+spec:
+  partitions: 6
+  replicas: 3

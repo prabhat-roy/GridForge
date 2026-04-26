@@ -1,0 +1,10 @@
+apiVersion: nats.io/v1alpha2
+kind: NatsCluster
+metadata: { name: gridforge-nats, namespace: messaging }
+spec:
+  size: 3
+  natsConfig:
+    jetstream:
+      enabled: true
+      memStorage:  { enabled: true, size: 2Gi }
+      fileStorage: { enabled: true, size: 100Gi, storageClassName: gp3 }
