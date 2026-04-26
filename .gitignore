@@ -114,6 +114,30 @@ target/
 metals.sbt
 
 # ============================================================
+# C / C++
+# ============================================================
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dSYM/
+build-cmake/
+cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+Makefile.cmake
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+.cache/
+conan.lock
+conanbuildinfo.*
+conaninfo.txt
+
+# ============================================================
 # Containers / IaC / K8s
 # ============================================================
 .terraform/
@@ -144,7 +168,11 @@ postgres-data/
 mongo-data/
 redis-data/
 kafka-data/
+timescale-data/
+influx-data/
+cassandra-data/
 
 # Claude-specific local files (not pushed)
 CLAUDE.md
 memory/
+.services.json

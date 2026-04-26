@@ -1,0 +1,9 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: gridforge
+build:
+  artifacts: []   # filled in per service in src/<domain>/<service>/skaffold.yaml
+deploy:
+  helm:
+    releases: []  # filled in per service

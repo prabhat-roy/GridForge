@@ -1,7 +1,7 @@
 # Getting Started
 
 > Quickstart for developers joining this project. For the full architecture, read
-> [README.md](README.md) and [CLAUDE.md](CLAUDE.md).
+> [README.md](README.md).
 
 ---
 
@@ -20,9 +20,9 @@ Language toolchains (install only what you need for the services you'll touch):
 | Java | 21 | <https://adoptium.net/> |
 | Kotlin | 2.x | bundled with Gradle |
 | Python | 3.12+ | <https://www.python.org/> |
-| Node.js | 22+ | <https://nodejs.org/> |
 | Rust | 1.80+ | <https://rustup.rs/> |
-| TypeScript | 5+ | via npm |
+| Scala | 2.13 / 3.x | <https://www.scala-lang.org/download/> |
+| C++ | 20 (gcc/clang) | platform-specific |
 
 Optional but recommended:
 
@@ -35,10 +35,10 @@ Optional but recommended:
 
 ## First-time setup
 
-`ash
+```bash
 # 1. Clone and enter the project
 git clone <git-url>
-cd <project>
+cd GridForge
 
 # 2. Copy the env template
 cp .env.example .env
@@ -46,22 +46,22 @@ cp .env.example .env
 # 3. Install local dev tooling
 make bootstrap
 
-# 4. Start the local stack (Postgres, Mongo, Redis, Kafka, MinIO, Keycloak, etc.)
+# 4. Start the local stack (Postgres, TimescaleDB, InfluxDB, Cassandra, Kafka, MQTT, ...)
 make compose-up
 
 # 5. Verify services are healthy
 docker compose ps
-`
+```
 
 ---
 
 ## Running tests
 
-`ash
+```bash
 make test         # all tests across all services
 make lint         # lint everything
 make fmt          # format everything
-`
+```
 
 ---
 
@@ -69,29 +69,38 @@ make fmt          # format everything
 
 Each service lives under `src/<domain>/<service>/` and has its own `Makefile`.
 
-`ash
+```bash
 cd src/<domain>/<service>
 make run          # start the service against the local stack
 make test         # service-local tests
-`
+```
 
 ---
 
 ## Generating proto bindings
 
-`ash
+```bash
 make proto        # regenerates all gRPC bindings from proto/
-`
+```
 
 ---
 
 ## Deploying to local Kubernetes
 
-`ash
+```bash
 kind create cluster --name local
 make deploy-local
 kubectl port-forward svc/api-gateway 8080:80
-`
+```
+
+---
+
+## IT vs OT clusters
+
+GridForge is split between an IT cluster (cloud) and an OT cluster (on-prem,
+air-gapped). For local development the OT-side services run as part of the same
+docker-compose stack, but in production the OT cluster lives in `ot/` overlays
+managed by Flux CD with manual change-control gates (NERC CIP-007).
 
 ---
 
@@ -100,12 +109,11 @@ kubectl port-forward svc/api-gateway 8080:80
 | You want… | Look in… |
 |---|---|
 | Project overview | [README.md](README.md) |
-| Architecture and rules for Claude | [CLAUDE.md](CLAUDE.md) |
 | Service code | `src/<domain>/<service>/` |
 | gRPC schemas | `proto/` |
 | Kafka event schemas | `events/` |
 | Helm charts | `helm/charts/` |
-| Terraform / OpenTofu | `infra/` |
+| Terraform | `infra/` |
 | CI pipelines | `ci/` |
 | GitOps configs | `gitops/` |
 | Observability configs | `observability/` |
@@ -118,4 +126,4 @@ kubectl port-forward svc/api-gateway 8080:80
 
 - ADRs in `docs/adr/` capture major architectural decisions
 - Service-level questions: see the README inside the service directory
-- Anything missing: check [CLAUDE.md](CLAUDE.md), or open a PR with the change you'd like
+- Anything missing: open a PR with the change you'd like

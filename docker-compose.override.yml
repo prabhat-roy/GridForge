@@ -1,0 +1,14 @@
+# Local developer overrides.
+# Copy this file as docker-compose.override.yml.local and customise.
+# Docker Compose merges this on top of docker-compose.yml automatically.
+
+version: "3.9"
+
+services:
+  prometheus:
+    ports: ["9091:9090"]   # avoid clash with local Prometheus
+
+  grafana:
+    environment:
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer

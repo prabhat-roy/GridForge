@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: rbac-service
+server:
+  port: ${PORT:50024}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+  endpoint:
+    health:
+      probes:
+        enabled: true

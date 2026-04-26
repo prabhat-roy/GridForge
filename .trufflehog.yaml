@@ -1,0 +1,14 @@
+exclude_paths:
+  - vendor/
+  - node_modules/
+  - target/
+  - build/
+  - .terraform/
+detectors:
+  - AWS
+  - GCP
+  - Azure
+  - GitHub
+  - GitLab
+  - Slack
+  - HashiCorp

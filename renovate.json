@@ -1,0 +1,19 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended", ":semanticCommits"],
+  "schedule": ["before 6am on monday"],
+  "rangeStrategy": "bump",
+  "labels": ["dependencies"],
+  "packageRules": [
+    { "matchManagers": ["gomod"], "groupName": "Go modules" },
+    { "matchManagers": ["maven", "gradle"], "groupName": "JVM" },
+    { "matchManagers": ["npm"], "groupName": "Node.js" },
+    { "matchManagers": ["pip_requirements", "poetry"], "groupName": "Python" },
+    { "matchManagers": ["cargo"], "groupName": "Rust" },
+    { "matchManagers": ["dockerfile"], "groupName": "Dockerfile base images" },
+    { "matchManagers": ["helmv3"], "groupName": "Helm charts" },
+    { "matchUpdateTypes": ["major"], "automerge": false }
+  ],
+  "vulnerabilityAlerts": { "enabled": true },
+  "dependencyDashboard": true
+}
