@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: balancing-mechanism
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: balancing-mechanism, gridforge.io/domain: market }
+data:
+  LOG_LEVEL: info
+  PORT: "50301"

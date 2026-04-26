@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bill-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: bill-service, gridforge.io/domain: customer }
+data:
+  LOG_LEVEL: info
+  PORT: "50202"

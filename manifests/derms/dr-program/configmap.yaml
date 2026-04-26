@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: dr-program
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: dr-program, gridforge.io/domain: derms }
+data:
+  LOG_LEVEL: info
+  PORT: "50142"

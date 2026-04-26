@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flexibility-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: flexibility-service, gridforge.io/domain: derms }
+data:
+  LOG_LEVEL: info
+  PORT: "50141"

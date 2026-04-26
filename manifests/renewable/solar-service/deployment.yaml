@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solar-service
+  namespace: gridforge
+  labels:
+    app.kubernetes.io/name: solar-service
+    app.kubernetes.io/part-of: gridforge
+    gridforge.io/domain: renewable
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: solar-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: solar-service, gridforge.io/domain: renewable }
+    spec:
+      serviceAccountName: solar-service
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: solar-service
+          image: harbor.gridforge.internal/gridforge/solar-service:latest
+          ports: [{ containerPort: 50060, name: http }]
+          envFrom: [{ configMapRef: { name: solar-service } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50060 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50060 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

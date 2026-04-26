@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: bid-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: bid-service, gridforge.io/domain: trading }
+data:
+  LOG_LEVEL: info
+  PORT: "50120"

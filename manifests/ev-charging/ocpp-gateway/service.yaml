@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ocpp-gateway
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: ocpp-gateway, gridforge.io/domain: ev-charging }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50180, targetPort: 50180 }]
+  selector: { app.kubernetes.io/name: ocpp-gateway }

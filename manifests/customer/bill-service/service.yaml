@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bill-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: bill-service, gridforge.io/domain: customer }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50202, targetPort: 50202 }]
+  selector: { app.kubernetes.io/name: bill-service }

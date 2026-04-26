@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: curtailment-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: curtailment-service, gridforge.io/domain: generation }
+data:
+  LOG_LEVEL: info
+  PORT: "50041"

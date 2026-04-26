@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: settlement-service
+  namespace: gridforge
+  labels:
+    app.kubernetes.io/name: settlement-service
+    app.kubernetes.io/part-of: gridforge
+    gridforge.io/domain: trading
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: settlement-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: settlement-service, gridforge.io/domain: trading }
+    spec:
+      serviceAccountName: settlement-service
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: settlement-service
+          image: harbor.gridforge.internal/gridforge/settlement-service:latest
+          ports: [{ containerPort: 50121, name: http }]
+          envFrom: [{ configMapRef: { name: settlement-service } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50121 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50121 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

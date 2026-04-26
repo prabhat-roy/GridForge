@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: switching-order
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: switching-order, gridforge.io/domain: transmission }
+data:
+  LOG_LEVEL: info
+  PORT: "50083"

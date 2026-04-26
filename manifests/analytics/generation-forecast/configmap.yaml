@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: generation-forecast
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: generation-forecast, gridforge.io/domain: analytics }
+data:
+  LOG_LEVEL: info
+  PORT: "50281"

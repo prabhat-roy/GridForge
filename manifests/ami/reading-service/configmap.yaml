@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: reading-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: reading-service, gridforge.io/domain: ami }
+data:
+  LOG_LEVEL: info
+  PORT: "50101"

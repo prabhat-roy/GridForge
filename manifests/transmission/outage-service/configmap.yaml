@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: outage-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: outage-service, gridforge.io/domain: transmission }
+data:
+  LOG_LEVEL: info
+  PORT: "50081"

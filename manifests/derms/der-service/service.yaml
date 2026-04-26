@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: der-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: der-service, gridforge.io/domain: derms }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50140, targetPort: 50140 }]
+  selector: { app.kubernetes.io/name: der-service }

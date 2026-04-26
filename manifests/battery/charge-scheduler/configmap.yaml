@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: charge-scheduler
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: charge-scheduler, gridforge.io/domain: battery }
+data:
+  LOG_LEVEL: info
+  PORT: "50162"

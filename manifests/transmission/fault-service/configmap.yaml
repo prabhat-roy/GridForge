@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fault-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: fault-service, gridforge.io/domain: transmission }
+data:
+  LOG_LEVEL: info
+  PORT: "50082"

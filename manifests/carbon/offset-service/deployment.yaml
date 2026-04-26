@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: offset-service
+  namespace: gridforge
+  labels:
+    app.kubernetes.io/name: offset-service
+    app.kubernetes.io/part-of: gridforge
+    gridforge.io/domain: carbon
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: offset-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: offset-service, gridforge.io/domain: carbon }
+    spec:
+      serviceAccountName: offset-service
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: offset-service
+          image: harbor.gridforge.internal/gridforge/offset-service:latest
+          ports: [{ containerPort: 50242, name: http }]
+          envFrom: [{ configMapRef: { name: offset-service } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50242 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50242 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

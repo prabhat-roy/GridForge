@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: scope2-tracker
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: scope2-tracker, gridforge.io/domain: carbon }
+data:
+  LOG_LEVEL: info
+  PORT: "50241"

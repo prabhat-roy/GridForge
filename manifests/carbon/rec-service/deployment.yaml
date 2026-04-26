@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rec-service
+  namespace: gridforge
+  labels:
+    app.kubernetes.io/name: rec-service
+    app.kubernetes.io/part-of: gridforge
+    gridforge.io/domain: carbon
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: rec-service } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: rec-service, gridforge.io/domain: carbon }
+    spec:
+      serviceAccountName: rec-service
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: rec-service
+          image: harbor.gridforge.internal/gridforge/rec-service:latest
+          ports: [{ containerPort: 50240, name: http }]
+          envFrom: [{ configMapRef: { name: rec-service } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50240 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50240 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

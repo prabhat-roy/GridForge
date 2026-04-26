@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: switching-order
+  namespace: gridforge
+  labels:
+    app.kubernetes.io/name: switching-order
+    app.kubernetes.io/part-of: gridforge
+    gridforge.io/domain: transmission
+spec:
+  replicas: 2
+  selector: { matchLabels: { app.kubernetes.io/name: switching-order } }
+  template:
+    metadata:
+      labels: { app.kubernetes.io/name: switching-order, gridforge.io/domain: transmission }
+    spec:
+      serviceAccountName: switching-order
+      securityContext: { runAsNonRoot: true, runAsUser: 1000, fsGroup: 1000 }
+      containers:
+        - name: switching-order
+          image: harbor.gridforge.internal/gridforge/switching-order:latest
+          ports: [{ containerPort: 50083, name: http }]
+          envFrom: [{ configMapRef: { name: switching-order } }]
+          livenessProbe:  { httpGet: { path: /healthz, port: 50083 }, initialDelaySeconds: 15 }
+          readinessProbe: { httpGet: { path: /healthz, port: 50083 }, initialDelaySeconds: 5 }
+          resources:
+            requests: { cpu: 100m, memory: 128Mi }
+            limits:   { cpu: 1000m, memory: 512Mi }
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }

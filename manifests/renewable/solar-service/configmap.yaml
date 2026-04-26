@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: solar-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: solar-service, gridforge.io/domain: renewable }
+data:
+  LOG_LEVEL: info
+  PORT: "50060"

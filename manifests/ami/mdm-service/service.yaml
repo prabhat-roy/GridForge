@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mdm-service
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: mdm-service, gridforge.io/domain: ami }
+spec:
+  type: ClusterIP
+  ports: [{ name: http, port: 50102, targetPort: 50102 }]
+  selector: { app.kubernetes.io/name: mdm-service }

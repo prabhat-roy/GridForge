@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: settlement-gateway
+  namespace: gridforge
+  labels: { app.kubernetes.io/name: settlement-gateway, gridforge.io/domain: market }
+data:
+  LOG_LEVEL: info
+  PORT: "50300"
