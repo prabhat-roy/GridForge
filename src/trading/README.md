@@ -1,6 +1,6 @@
-# trading — GridForge
+﻿# trading â€” GridForge
 
-Services in the **trading** domain.
+Services in the trading domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

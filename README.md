@@ -1,9 +1,9 @@
-# GridForge — Smart Grid & Energy Management Platform
+﻿# GridForge â€” Smart Grid & Energy Management Platform
 
 Enterprise-grade, cloud-native energy management platform built on open source technologies.
-Covers the full energy value chain — power generation (renewable + conventional), grid operations,
+Covers the full energy value chain â€” power generation (renewable + conventional), grid operations,
 energy trading, demand response, smart metering, EV charging infrastructure, battery storage
-management, and customer energy services — designed for utilities, energy retailers, grid operators,
+management, and customer energy services â€” designed for utilities, energy retailers, grid operators,
 and renewable energy developers. Compliant with NERC CIP, IEC 61968/61970 (CIM), and ENTSO-E standards.
 
 ---
@@ -12,7 +12,7 @@ and renewable energy developers. Compliant with NERC CIP, IEC 61968/61970 (CIM),
 
 | Attribute         | Value                                                              |
 |-------------------|--------------------------------------------------------------------|
-| Type              | Smart Grid · DERMS · SCADA · Energy Trading · EV Charging          |
+| Type              | Smart Grid Â· DERMS Â· SCADA Â· Energy Trading Â· EV Charging          |
 | Domains           | 17 business domains                                                |
 | Services          | 190+ microservices                                                 |
 | Languages         | Go, Java, Kotlin, Python, Rust, Scala, C++ (SCADA adapters)        |
@@ -22,7 +22,7 @@ and renewable energy developers. Compliant with NERC CIP, IEC 61968/61970 (CIM),
 | Message Broker    | Apache Kafka, MQTT, NATS JetStream, AMQP (for SCADA)               |
 | Cloud             | AWS (primary), Azure (secondary), On-premise (OT network air-gap)  |
 | Orchestration     | Kubernetes (EKS) + on-premise K8s (OT / SCADA environment)         |
-| IoT Integration   | IEC 61850, DNP3, Modbus, MQTT — smart meters, sensors, SCADA       |
+| IoT Integration   | IEC 61850, DNP3, Modbus, MQTT â€” smart meters, sensors, SCADA       |
 | Frontend          | React (grid ops dashboard), Angular (energy trader portal), Next.js (customer portal), Flutter (mobile) |
 
 ---
@@ -54,35 +54,35 @@ and renewable energy developers. Compliant with NERC CIP, IEC 61968/61970 (CIM),
 ## Architecture
 
 ```
-    ┌─────────────────────────────────────────────────────────────────┐
-    │                   IT Network (Cloud / DMZ)                       │
-    │  ┌──────────────────────────────────────────────────────────┐   │
-    │  │                     API Gateway                          │   │
-    │  │     (OAuth2 · mTLS · Rate Limit · NERC CIP Auth)        │   │
-    │  └──────┬─────────────┬──────────────┬──────────────────────┘   │
-    │         │             │              │                           │
-    │  ┌──────▼──┐   ┌──────▼───┐   ┌──────▼──────────┐              │
-    │  │Grid Ops │   │Customer  │   │ Energy Trader   │              │
-    │  │Dashboard│   │  Portal  │   │  Portal         │              │
-    │  │ (React) │   │(Next.js) │   │  (Angular)      │              │
-    │  └──────┬──┘   └──────┬───┘   └──────┬──────────┘              │
-    │         └─────────────┴──────────────┘                          │
-    │                        │ gRPC (Istio mTLS)                       │
-    │  ┌──────────┐  ┌────────▼───┐  ┌──────────┐  ┌──────────────┐  │
-    │  │  Energy  │  │  Smart     │  │   EV     │  │  Trading &   │  │
-    │  │ Trading  │  │  Metering  │  │ Charging │  │  Settlement  │  │
-    │  └──────────┘  └────────────┘  └──────────┘  └──────────────┘  │
-    └──────────────────────────┬──────────────────────────────────────┘
-                  IT/OT DMZ    │ (unidirectional data diode)
-    ┌─────────────────────────▼──────────────────────────────────────┐
-    │                  OT Network (Air-Gapped / On-Premise)           │
-    │  ┌────────────────┐    ┌──────────────┐    ┌─────────────────┐ │
-    │  │  SCADA Gateway │    │  IEC 61850   │    │  DNP3 / Modbus  │ │
-    │  │  (EMS / DMS)   │    │  Substation  │    │  RTU Adapters   │ │
-    │  └────────┬───────┘    └──────┬───────┘    └────────┬────────┘ │
-    │           │                   │                      │          │
-    │     Smart Meters        Substations           SCADA RTUs        │
-    └────────────────────────────────────────────────────────────────┘
+    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+    â”‚                   IT Network (Cloud / DMZ)                       â”‚
+    â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”   â”‚
+    â”‚  â”‚                     API Gateway                          â”‚   â”‚
+    â”‚  â”‚     (OAuth2 Â· mTLS Â· Rate Limit Â· NERC CIP Auth)        â”‚   â”‚
+    â”‚  â””â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜   â”‚
+    â”‚         â”‚             â”‚              â”‚                           â”‚
+    â”‚  â”Œâ”€â”€â”€â”€â”€â”€â–¼â”€â”€â”   â”Œâ”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”   â”Œâ”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”              â”‚
+    â”‚  â”‚Grid Ops â”‚   â”‚Customer  â”‚   â”‚ Energy Trader   â”‚              â”‚
+    â”‚  â”‚Dashboardâ”‚   â”‚  Portal  â”‚   â”‚  Portal         â”‚              â”‚
+    â”‚  â”‚ (React) â”‚   â”‚(Next.js) â”‚   â”‚  (Angular)      â”‚              â”‚
+    â”‚  â””â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”˜   â””â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”˜   â””â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜              â”‚
+    â”‚         â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜                          â”‚
+    â”‚                        â”‚ gRPC (Istio mTLS)                       â”‚
+    â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”  â”‚
+    â”‚  â”‚  Energy  â”‚  â”‚  Smart     â”‚  â”‚   EV     â”‚  â”‚  Trading &   â”‚  â”‚
+    â”‚  â”‚ Trading  â”‚  â”‚  Metering  â”‚  â”‚ Charging â”‚  â”‚  Settlement  â”‚  â”‚
+    â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â”‚
+    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                  IT/OT DMZ    â”‚ (unidirectional data diode)
+    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+    â”‚                  OT Network (Air-Gapped / On-Premise)           â”‚
+    â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”‚
+    â”‚  â”‚  SCADA Gateway â”‚    â”‚  IEC 61850   â”‚    â”‚  DNP3 / Modbus  â”‚ â”‚
+    â”‚  â”‚  (EMS / DMS)   â”‚    â”‚  Substation  â”‚    â”‚  RTU Adapters   â”‚ â”‚
+    â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜    â””â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”˜    â””â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â”‚
+    â”‚           â”‚                   â”‚                      â”‚          â”‚
+    â”‚     Smart Meters        Substations           SCADA RTUs        â”‚
+    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ---
@@ -90,62 +90,62 @@ and renewable energy developers. Compliant with NERC CIP, IEC 61968/61970 (CIM),
 ## Tech Stack
 
 ### Energy & Grid Standards
-- **IEC 61970 / 61968 (CIM)**: Common Information Model — canonical data model for grid topology, assets, and market
-- **IEC 61850**: Substation automation protocol (GOOSE, Sampled Values, MMS) for real-time protection and control
-- **DNP3 / Modbus**: Legacy SCADA protocols — adapter service translates to internal canonical model
-- **OCPP 2.0.1**: Open Charge Point Protocol — EV charger communication and management standard
-- **ENTSO-E**: European energy market standards (CIM profiles for cross-border electricity trading)
-- **OSCP 2.0**: Open Smart Charging Protocol — EV charging flexibility for grid balancing
+- IEC 61970 / 61968 (CIM): Common Information Model â€” canonical data model for grid topology, assets, and market
+- IEC 61850: Substation automation protocol (GOOSE, Sampled Values, MMS) for real-time protection and control
+- DNP3 / Modbus: Legacy SCADA protocols â€” adapter service translates to internal canonical model
+- OCPP 2.0.1: Open Charge Point Protocol â€” EV charger communication and management standard
+- ENTSO-E: European energy market standards (CIM profiles for cross-border electricity trading)
+- OSCP 2.0: Open Smart Charging Protocol â€” EV charging flexibility for grid balancing
 
 ### Infrastructure
-- **IT Layer**: Kubernetes on EKS — all business applications, trading, billing, analytics, customer services
-- **OT Layer**: On-premise Kubernetes cluster (air-gapped) — SCADA gateway, IEC 61850 services, real-time control
-- **IT/OT DMZ**: Unidirectional data diode (Waterfall Security / open source equivalent) — OT data flows to IT only, never reverse
-- **Time-Series**: TimescaleDB (meter readings, sensor telemetry); InfluxDB (high-frequency SCADA measurements — 1-second resolution)
-- **Real-time**: NATS JetStream (grid event distribution, sub-100ms latency); MQTT (meter communication via HES)
+- IT Layer: Kubernetes on EKS â€” all business applications, trading, billing, analytics, customer services
+- OT Layer: On-premise Kubernetes cluster (air-gapped) â€” SCADA gateway, IEC 61850 services, real-time control
+- IT/OT DMZ: Unidirectional data diode (Waterfall Security / open source equivalent) â€” OT data flows to IT only, never reverse
+- Time-Series: TimescaleDB (meter readings, sensor telemetry); InfluxDB (high-frequency SCADA measurements â€” 1-second resolution)
+- Real-time: NATS JetStream (grid event distribution, sub-100ms latency); MQTT (meter communication via HES)
 
 ### CI/CD & GitOps
-- **CI**: Jenkins (primary), GitLab CI (self-hosted, air-gapped for OT), Tekton
-- **CD**: ArgoCD (IT layer), Flux CD (OT layer — change-controlled, manual promotion gates for production OT)
-- **IaC**: Terraform (EKS + VPC), Ansible (OT server hardening to NERC CIP standards)
-- **Change Control**: 4-eyes approval + maintenance window enforcement for OT deployments (NERC CIP-007)
-- **Secrets**: HashiCorp Vault (IT) + SOPS (OT — air-gapped, HSM-backed key management)
+- CI: Jenkins (primary), GitLab CI (self-hosted, air-gapped for OT), Tekton
+- CD: ArgoCD (IT layer), Flux CD (OT layer â€” change-controlled, manual promotion gates for production OT)
+- IaC: Terraform (EKS + VPC), Ansible (OT server hardening to NERC CIP standards)
+- Change Control: 4-eyes approval + maintenance window enforcement for OT deployments (NERC CIP-007)
+- Secrets: HashiCorp Vault (IT) + SOPS (OT â€” air-gapped, HSM-backed key management)
 
 ### Observability
-- **Metrics**: Prometheus + Grafana (grid frequency, voltage, generation output, EV charger availability)
-- **Logs**: Loki + Fluent Bit (NERC CIP: 90-day audit log retention, tamper-evident)
-- **Traces**: Jaeger + OpenTelemetry (trace demand response command from trigger → DER → grid response)
-- **Grid Dashboard**: Real-time single-line diagram on Grafana (grid topology, power flows, fault locations)
-- **SLOs**: SCADA data latency < 2s, smart meter reading success rate > 99.5%, EV charger availability > 99%
+- Metrics: Prometheus + Grafana (grid frequency, voltage, generation output, EV charger availability)
+- Logs: Loki + Fluent Bit (NERC CIP: 90-day audit log retention, tamper-evident)
+- Traces: Jaeger + OpenTelemetry (trace demand response command from trigger â†’ DER â†’ grid response)
+- Grid Dashboard: Real-time single-line diagram on Grafana (grid topology, power flows, fault locations)
+- SLOs: SCADA data latency < 2s, smart meter reading success rate > 99.5%, EV charger availability > 99%
 
 ### Security (NERC CIP)
-- **IT/OT Separation**: Physical + logical network separation; unidirectional data diode at DMZ boundary
-- **Identity**: Keycloak (operator MFA mandatory — NERC CIP-006), SPIFFE/SPIRE (service identity), Teleport (privileged OT access with session recording)
-- **Network**: Cilium eBPF (IT), dedicated VLANs + firewall rules (OT), IEC 62351 (encrypted IEC 61850)
-- **Scanning**: Trivy, Semgrep (ICS security rules), NESSUS (OT vulnerability scanning), kube-bench
-- **Policy**: OPA/Gatekeeper, Kyverno, Falco (IT); IDS/IPS (OT — Zeek + Suricata)
-- **Audit**: Every operator action on SCADA logged (NERC CIP-007 R5) — immutable, 90-day minimum retention
-- **Incident Response**: Automated isolation playbook (Argo Workflows) — detect anomaly → isolate → alert NOC
+- IT/OT Separation: Physical + logical network separation; unidirectional data diode at DMZ boundary
+- Identity: Keycloak (operator MFA mandatory â€” NERC CIP-006), SPIFFE/SPIRE (service identity), Teleport (privileged OT access with session recording)
+- Network: Cilium eBPF (IT), dedicated VLANs + firewall rules (OT), IEC 62351 (encrypted IEC 61850)
+- Scanning: Trivy, Semgrep (ICS security rules), NESSUS (OT vulnerability scanning), kube-bench
+- Policy: OPA/Gatekeeper, Kyverno, Falco (IT); IDS/IPS (OT â€” Zeek + Suricata)
+- Audit: Every operator action on SCADA logged (NERC CIP-007 R5) â€” immutable, 90-day minimum retention
+- Incident Response: Automated isolation playbook (Argo Workflows) â€” detect anomaly â†’ isolate â†’ alert NOC
 
 ### AI / ML (Grid Intelligence)
-- **Load Forecasting**: LSTM + weather model — 15-min ahead load forecast for grid dispatch (MAPE < 2%)
-- **Renewable Generation Forecast**: Ensemble model (NWP + historical) — solar and wind output 48h ahead
-- **Fault Detection & Classification**: CNN on SCADA waveform data — detect and classify faults in <100ms
-- **Non-Technical Loss Detection**: Graph neural network — identify electricity theft via smart meter anomaly patterns
-- **Battery Degradation**: Physics-informed ML model (capacity fade prediction per cycle)
-- **EV Load Optimisation**: RL agent for smart charging scheduling — minimise grid stress, maximise renewable usage
-- **Price Forecasting**: Day-ahead electricity price prediction (XGBoost + market feature engineering)
+- Load Forecasting: LSTM + weather model â€” 15-min ahead load forecast for grid dispatch (MAPE < 2%)
+- Renewable Generation Forecast: Ensemble model (NWP + historical) â€” solar and wind output 48h ahead
+- Fault Detection & Classification: CNN on SCADA waveform data â€” detect and classify faults in <100ms
+- Non-Technical Loss Detection: Graph neural network â€” identify electricity theft via smart meter anomaly patterns
+- Battery Degradation: Physics-informed ML model (capacity fade prediction per cycle)
+- EV Load Optimisation: RL agent for smart charging scheduling â€” minimise grid stress, maximise renewable usage
+- Price Forecasting: Day-ahead electricity price prediction (XGBoost + market feature engineering)
 
 ---
 
 ## Key Design Decisions
 
-1. **Hard IT/OT separation**: Unidirectional data diode enforces one-way data flow from OT to IT — a compromised IT system cannot send commands to grid equipment
-2. **CIM as canonical model**: All grid data normalised to IEC CIM — protocol adapters (DNP3, Modbus, IEC 61850) translate at ingest; downstream services never deal with raw protocols
-3. **NERC CIP-compliant change control**: OT deployments require RFC, maintenance window, 4-eyes approval, and post-change verification — enforced via Flux CD promotion gates
-4. **Real-time separated from analytics**: SCADA real-time path (sub-100ms) is completely separate from analytics path — no shared infrastructure that could cause latency spikes in grid control
-5. **VPP (Virtual Power Plant)**: Aggregated DERs (solar, batteries, flexible loads) managed as a single dispatchable resource — participates in balancing markets
-6. **OCPP 2.0.1 with smart charging**: EV chargers receive dynamic charging profiles based on grid state — prevent local grid overload during peak EV charging periods
+1. Hard IT/OT separation: Unidirectional data diode enforces one-way data flow from OT to IT â€” a compromised IT system cannot send commands to grid equipment
+2. CIM as canonical model: All grid data normalised to IEC CIM â€” protocol adapters (DNP3, Modbus, IEC 61850) translate at ingest; downstream services never deal with raw protocols
+3. NERC CIP-compliant change control: OT deployments require RFC, maintenance window, 4-eyes approval, and post-change verification â€” enforced via Flux CD promotion gates
+4. Real-time separated from analytics: SCADA real-time path (sub-100ms) is completely separate from analytics path â€” no shared infrastructure that could cause latency spikes in grid control
+5. VPP (Virtual Power Plant): Aggregated DERs (solar, batteries, flexible loads) managed as a single dispatchable resource â€” participates in balancing markets
+6. OCPP 2.0.1 with smart charging: EV chargers receive dynamic charging profiles based on grid state â€” prevent local grid overload during peak EV charging periods
 
 ---
 
@@ -154,10 +154,10 @@ and renewable energy developers. Compliant with NERC CIP, IEC 61968/61970 (CIM),
 | Standard          | Implementation                                                         |
 |-------------------|------------------------------------------------------------------------|
 | NERC CIP-002      | Critical asset identification, BES Cyber System classification         |
-| NERC CIP-005      | ESP (Electronic Security Perimeter) — IT/OT DMZ, data diode           |
-| NERC CIP-006      | Physical security — MFA + biometric for OT control room access         |
-| NERC CIP-007      | System security management — patch management, port control, logging   |
-| NERC CIP-010      | Configuration management — baseline + change detection (Falco + Wazuh)|
+| NERC CIP-005      | ESP (Electronic Security Perimeter) â€” IT/OT DMZ, data diode           |
+| NERC CIP-006      | Physical security â€” MFA + biometric for OT control room access         |
+| NERC CIP-007      | System security management â€” patch management, port control, logging   |
+| NERC CIP-010      | Configuration management â€” baseline + change detection (Falco + Wazuh)|
 | IEC 62351         | Encrypted IEC 61850 communication (TLS 1.3)                            |
 | GDPR              | Smart meter data minimisation, consent, anonymisation for analytics    |
 

@@ -1,8 +1,8 @@
-# settlement-service
+﻿# settlement-service
 
-Service in the **trading** domain of GridForge.
+Service in the trading domain of GridForge.
 
-**Language:** Go · **Port:** 50121
+Language: Go Â· Port: 50121
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/settlement-service/](../../../helm/charts/settlement-service/) — Helm chart
-- [manifests/trading/settlement-service/](../../../manifests/trading/settlement-service/) — Raw K8s manifests
+- [helm/charts/settlement-service/](../../../helm/charts/settlement-service/) â€” Helm chart
+- [manifests/trading/settlement-service/](../../../manifests/trading/settlement-service/) â€” Raw K8s manifests

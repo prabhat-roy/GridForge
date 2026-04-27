@@ -1,5 +1,5 @@
-# plant-service
+﻿# plant-service
 
 Power plant master data and metering
 
-**Domain:** ``generation`` · **Language:** java · **Port:** 50060
+Domain: ``generation`` Â· Language: java Â· Port: 50060

@@ -1,4 +1,4 @@
-# AI_PLAN.md — GridForge (Energy & Utilities Platform)
+﻿# AI_PLAN.md â€” GridForge (Energy & Utilities Platform)
 
 > Hierarchical AI/ML strategy. Reuses the Paperclip / OpenClaw / NemoClaw
 > agent platform first defined in [ShopOS/AI.md](../ShopOS/AI.md). This file
@@ -12,13 +12,13 @@ The grid is a real-time, safety-critical control system with massive
 telemetry: SCADA, PMU, smart meters, weather, EV chargers, DERs. AI
 delivers value where rule-based heuristics break:
 
-- Day-ahead and intra-day **load forecasting** with renewables variance.
-- **Predictive maintenance** of transformers, breakers, transmission lines.
-- **DER + V2G optimisation** (solar, wind, battery, EV).
-- **SCADA anomaly detection** for cyber + physical events.
-- **Customer-service chatbot** to handle the bulk of billing and outage queries.
+- Day-ahead and intra-day load forecasting with renewables variance.
+- Predictive maintenance of transformers, breakers, transmission lines.
+- DER + V2G optimisation (solar, wind, battery, EV).
+- SCADA anomaly detection for cyber + physical events.
+- Customer-service chatbot to handle the bulk of billing and outage queries.
 
-All AI is **advisory** to control systems — IEC 61850 and NERC CIP forbid
+All AI is advisory to control systems â€” IEC 61850 and NERC CIP forbid
 direct AI write to the grid. Decisions are logged, attributable, and
 reversible.
 
@@ -28,7 +28,7 @@ reversible.
 
 | # | Use case | Domain | Model class | Latency budget |
 |---|----------|--------|-------------|----------------|
-| 1 | Short-term load forecast (15 min – 7 days) | dispatch, planning | NHITS + Temporal Fusion Transformer + weather GNN | 5-min refresh |
+| 1 | Short-term load forecast (15 min â€“ 7 days) | dispatch, planning | NHITS + Temporal Fusion Transformer + weather GNN | 5-min refresh |
 | 2 | Renewable generation forecast (PV, wind) | generation | GraphCast-distilled + LightGBM corrector | 15-min refresh |
 | 3 | Transformer / breaker predictive maintenance | assets | Survival GBM on DGA + thermal | nightly |
 | 4 | SCADA anomaly + cyber-physical detection | security, ops | Autoencoder + Isolation Forest + LLM RCA writeup | <30 s |
@@ -45,14 +45,14 @@ reversible.
 
 ## 3. Hierarchical Agent Architecture
 
-Reuses **OpenClaw** / **Paperclip** / **NemoClaw** from `ShopOS/AI.md`.
+Reuses OpenClaw / Paperclip / NemoClaw from `ShopOS/AI.md`.
 
-### Tier 0 — Master Architect Agent
+### Tier 0 â€” Master Architect Agent
 
-`grid-architect` — researches AI tooling, proposes services, on-boards
+`grid-architect` â€” researches AI tooling, proposes services, on-boards
 Tier-1 leads, weekly written report. Read-only on prod.
 
-### Tier 1 — Division Leads (5)
+### Tier 1 â€” Division Leads (5)
 
 | Agent | Scope |
 |-------|-------|
@@ -62,30 +62,30 @@ Tier-1 leads, weekly written report. Read-only on prod.
 | `grid-dataml-lead`     | Feature store, training, drift, edge models |
 | `grid-platform-lead`   | Cross-cutting (idempotency, saga, outbox), edge runtime |
 
-### Tier 2 — Specialist Agents
+### Tier 2 â€” Specialist Agents
 
-**By language**: Go, Java, Kotlin, Python, Node, Rust, C++ (edge),
+By language: Go, Java, Kotlin, Python, Node, Rust, C++ (edge),
 TypeScript.
 
-**By tool**: PostgreSQL, TimescaleDB, MongoDB, Redis, Cassandra,
+By tool: PostgreSQL, TimescaleDB, MongoDB, Redis, Cassandra,
 ClickHouse, InfluxDB, Kafka, NATS, MQTT (Mosquitto / EMQX), OPC-UA,
 IEC-61850 gateway, Vault, Keycloak, OPA, Kyverno, Falco, Cilium, Istio,
 ArgoCD, Argo Workflows, Prometheus, Grafana, Loki, Jaeger,
 OpenTelemetry, MinIO, Trivy, Cosign, OpenSearch, Pulsar, Druid,
 KubeEdge / k3s (edge), Nats Operator, OpenFGA, Wazuh, Camunda.
 
-**By service** — one agent per microservice (~190). Owns README,
+By service â€” one agent per microservice (~190). Owns README,
 OpenAPI, tests, CHANGELOG, deps, /healthz.
 
-### Tier 3 — Ephemeral Workers
+### Tier 3 â€” Ephemeral Workers
 
 Spawned for retraining load-forecast on weekly data, generating outage
 runbooks, building edge bundles for substation gateways.
 
 ### Lifecycle
 
-Research → Document → Implement → Test → Review → Deploy → Monitor →
-Respond → Upgrade → Report. Weekly markdown report in `ai/reports/`.
+Research â†’ Document â†’ Implement â†’ Test â†’ Review â†’ Deploy â†’ Monitor â†’
+Respond â†’ Upgrade â†’ Report. Weekly markdown report in `ai/reports/`.
 
 ---
 
@@ -93,21 +93,21 @@ Respond → Upgrade → Report. Weekly markdown report in `ai/reports/`.
 
 ```
 ai-platform/
-├── cluster: grid-ai-{aws,gcp,azure}      ← cloud GPU pool
-├── cluster: grid-ai-edge                 ← substation k3s + Jetson Orin
-├── namespace: grid-ai-control             ← Paperclip
-├── namespace: grid-ai-agents              ← OpenClaw runtime
-├── namespace: grid-ai-sandbox             ← NemoClaw
-├── namespace: grid-ai-models              ← vLLM, Ollama, LiteLLM, Triton
-├── namespace: grid-ai-data                ← Qdrant, Weaviate, MinIO, MLflow
-├── namespace: grid-ai-obs                 ← Langfuse, Phoenix
-└── namespace: grid-ai-pipelines           ← Argo Workflows
+â”œâ”€â”€ cluster: grid-ai-{aws,gcp,azure}      â† cloud GPU pool
+â”œâ”€â”€ cluster: grid-ai-edge                 â† substation k3s + Jetson Orin
+â”œâ”€â”€ namespace: grid-ai-control             â† Paperclip
+â”œâ”€â”€ namespace: grid-ai-agents              â† OpenClaw runtime
+â”œâ”€â”€ namespace: grid-ai-sandbox             â† NemoClaw
+â”œâ”€â”€ namespace: grid-ai-models              â† vLLM, Ollama, LiteLLM, Triton
+â”œâ”€â”€ namespace: grid-ai-data                â† Qdrant, Weaviate, MinIO, MLflow
+â”œâ”€â”€ namespace: grid-ai-obs                 â† Langfuse, Phoenix
+â””â”€â”€ namespace: grid-ai-pipelines           â† Argo Workflows
 ```
 
 ### Hardware
 
-- **Cloud**: A100 for retraining (forecasts, outage GNN); A10G/L4 for LLM.
-- **Edge** (substation): k3s + Jetson Orin running Triton/TensorRT for
+- Cloud: A100 for retraining (forecasts, outage GNN); A10G/L4 for LLM.
+- Edge (substation): k3s + Jetson Orin running Triton/TensorRT for
   SCADA anomaly + CV from drones / pole cameras.
 
 ### Software stack
@@ -118,9 +118,9 @@ ai-platform/
 | Edge inference | TensorRT, ONNX Runtime | Substation, line-CV |
 | Local dev | Ollama | Offline |
 | Gateway | LiteLLM | OpenAI-compatible, quota |
-| Orchestrator | **Paperclip** | Task queue, audit |
-| Agent platform | **OpenClaw** | Llama 3.1 70B |
-| Sandbox | **NemoClaw** | NeMo Guardrails |
+| Orchestrator | Paperclip | Task queue, audit |
+| Agent platform | OpenClaw | Llama 3.1 70B |
+| Sandbox | NemoClaw | NeMo Guardrails |
 | Vector | Qdrant | Tariff & runbook RAG |
 | Vector | Weaviate | Multimodal lidar/CV defect |
 | MLOps | MLflow | Model registry |
@@ -157,7 +157,7 @@ ai-platform/
 | 2 | Paperclip + NemoClaw; Tier-0 architect live |
 | 3 | Tier-1 leads; load-forecast v0 shadow |
 | 4 | Per-language / per-tool Tier-2 agents |
-| 5 | Per-service Tier-2 agents (dispatch → assets first) |
+| 5 | Per-service Tier-2 agents (dispatch â†’ assets first) |
 | 6 | Load forecast v1 prod; theft detection v1 |
 | 7 | Predictive maintenance v1 on transformers; chatbot pilot |
 | 8 | Substation edge fleet rollout, multi-cloud failover drill |
@@ -166,9 +166,9 @@ ai-platform/
 
 ## 7. Cost Envelope (target)
 
-- **Cloud infra**: $5,000 – $7,800 / month per primary cloud
-- **Edge substation**: $2,000 one-time + $50/month ops
-- **No** subscription LLM spend
+- Cloud infra: $5,000 â€“ $7,800 / month per primary cloud
+- Edge substation: $2,000 one-time + $50/month ops
+- No subscription LLM spend
 
 ---
 

@@ -1,8 +1,8 @@
-# tamper-detection
+﻿# tamper-detection
 
-Service in the **ami** domain of GridForge.
+Service in the ami domain of GridForge.
 
-**Language:** Go · **Port:** 50103
+Language: Go Â· Port: 50103
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/tamper-detection/](../../../helm/charts/tamper-detection/) — Helm chart
-- [manifests/ami/tamper-detection/](../../../manifests/ami/tamper-detection/) — Raw K8s manifests
+- [helm/charts/tamper-detection/](../../../helm/charts/tamper-detection/) â€” Helm chart
+- [manifests/ami/tamper-detection/](../../../manifests/ami/tamper-detection/) â€” Raw K8s manifests

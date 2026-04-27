@@ -1,8 +1,8 @@
-# network-model
+﻿# network-model
 
-Service in the **transmission** domain of GridForge.
+Service in the transmission domain of GridForge.
 
-**Language:** Go · **Port:** 50080
+Language: Go Â· Port: 50080
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/network-model/](../../../helm/charts/network-model/) — Helm chart
-- [manifests/transmission/network-model/](../../../manifests/transmission/network-model/) — Raw K8s manifests
+- [helm/charts/network-model/](../../../helm/charts/network-model/) â€” Helm chart
+- [manifests/transmission/network-model/](../../../manifests/transmission/network-model/) â€” Raw K8s manifests

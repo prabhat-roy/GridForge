@@ -1,8 +1,8 @@
-# bess-service
+﻿# bess-service
 
-Service in the **battery** domain of GridForge.
+Service in the battery domain of GridForge.
 
-**Language:** Go · **Port:** 50160
+Language: Go Â· Port: 50160
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/bess-service/](../../../helm/charts/bess-service/) — Helm chart
-- [manifests/battery/bess-service/](../../../manifests/battery/bess-service/) — Raw K8s manifests
+- [helm/charts/bess-service/](../../../helm/charts/bess-service/) â€” Helm chart
+- [manifests/battery/bess-service/](../../../manifests/battery/bess-service/) â€” Raw K8s manifests

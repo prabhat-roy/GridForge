@@ -1,6 +1,6 @@
-# asset — GridForge
+﻿# asset â€” GridForge
 
-Services in the **asset management** domain.
+Services in the asset management domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

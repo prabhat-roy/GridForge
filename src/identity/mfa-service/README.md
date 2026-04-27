@@ -1,5 +1,5 @@
-# mfa-service
+﻿# mfa-service
 
 Multi-factor auth (TOTP, WebAuthn, smartcard)
 
-**Domain:** ``identity`` · **Language:** go · **Port:** 50023
+Domain: ``identity`` Â· Language: go Â· Port: 50023

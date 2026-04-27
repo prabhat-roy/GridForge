@@ -1,8 +1,8 @@
-# settlement-gateway
+﻿# settlement-gateway
 
-Service in the **market** domain of GridForge.
+Service in the market domain of GridForge.
 
-**Language:** Go · **Port:** 50300
+Language: Go Â· Port: 50300
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/settlement-gateway/](../../../helm/charts/settlement-gateway/) — Helm chart
-- [manifests/market/settlement-gateway/](../../../manifests/market/settlement-gateway/) — Raw K8s manifests
+- [helm/charts/settlement-gateway/](../../../helm/charts/settlement-gateway/) â€” Helm chart
+- [manifests/market/settlement-gateway/](../../../manifests/market/settlement-gateway/) â€” Raw K8s manifests

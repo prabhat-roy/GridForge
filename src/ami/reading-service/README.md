@@ -1,8 +1,8 @@
-# reading-service
+﻿# reading-service
 
-Service in the **ami** domain of GridForge.
+Service in the ami domain of GridForge.
 
-**Language:** Go · **Port:** 50101
+Language: Go Â· Port: 50101
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/reading-service/](../../../helm/charts/reading-service/) — Helm chart
-- [manifests/ami/reading-service/](../../../manifests/ami/reading-service/) — Raw K8s manifests
+- [helm/charts/reading-service/](../../../helm/charts/reading-service/) â€” Helm chart
+- [manifests/ami/reading-service/](../../../manifests/ami/reading-service/) â€” Raw K8s manifests

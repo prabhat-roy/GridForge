@@ -1,8 +1,8 @@
-# billing-service
+﻿# billing-service
 
-Service in the **ev-charging** domain of GridForge.
+Service in the ev-charging domain of GridForge.
 
-**Language:** Go · **Port:** 50182
+Language: Go Â· Port: 50182
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/billing-service/](../../../helm/charts/billing-service/) — Helm chart
-- [manifests/ev-charging/billing-service/](../../../manifests/ev-charging/billing-service/) — Raw K8s manifests
+- [helm/charts/billing-service/](../../../helm/charts/billing-service/) â€” Helm chart
+- [manifests/ev-charging/billing-service/](../../../manifests/ev-charging/billing-service/) â€” Raw K8s manifests

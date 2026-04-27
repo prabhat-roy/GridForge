@@ -1,6 +1,6 @@
-# derms — GridForge
+﻿# derms â€” GridForge
 
-Services in the **DERMS** (Distributed Energy Resource Management) domain.
+Services in the DERMS (Distributed Energy Resource Management) domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

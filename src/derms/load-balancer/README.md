@@ -1,8 +1,8 @@
-# load-balancer
+﻿# load-balancer
 
-Service in the **derms** domain of GridForge.
+Service in the derms domain of GridForge.
 
-**Language:** Go · **Port:** 50143
+Language: Go Â· Port: 50143
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/load-balancer/](../../../helm/charts/load-balancer/) — Helm chart
-- [manifests/derms/load-balancer/](../../../manifests/derms/load-balancer/) — Raw K8s manifests
+- [helm/charts/load-balancer/](../../../helm/charts/load-balancer/) â€” Helm chart
+- [manifests/derms/load-balancer/](../../../manifests/derms/load-balancer/) â€” Raw K8s manifests

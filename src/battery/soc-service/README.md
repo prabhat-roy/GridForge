@@ -1,8 +1,8 @@
-# soc-service
+﻿# soc-service
 
-Service in the **battery** domain of GridForge.
+Service in the battery domain of GridForge.
 
-**Language:** Go · **Port:** 50161
+Language: Go Â· Port: 50161
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/soc-service/](../../../helm/charts/soc-service/) — Helm chart
-- [manifests/battery/soc-service/](../../../manifests/battery/soc-service/) — Raw K8s manifests
+- [helm/charts/soc-service/](../../../helm/charts/soc-service/) â€” Helm chart
+- [manifests/battery/soc-service/](../../../manifests/battery/soc-service/) â€” Raw K8s manifests

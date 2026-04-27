@@ -1,5 +1,5 @@
-# auth-service
+﻿# auth-service
 
 OIDC + WebAuthn auth core
 
-**Domain:** ``identity`` · **Language:** rust · **Port:** 50020
+Domain: ``identity`` Â· Language: rust Â· Port: 50020

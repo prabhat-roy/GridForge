@@ -1,6 +1,6 @@
-# carbon — GridForge
+﻿# carbon â€” GridForge
 
-Services in the **carbon & sustainability** domain.
+Services in the carbon & sustainability domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

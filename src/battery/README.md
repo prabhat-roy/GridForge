@@ -1,6 +1,6 @@
-# battery — GridForge
+﻿# battery â€” GridForge
 
-Services in the **battery / storage** domain.
+Services in the battery / storage domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

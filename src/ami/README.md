@@ -1,6 +1,6 @@
-# ami — GridForge
+﻿# ami â€” GridForge
 
-Services in the **AMI** (Advanced Metering Infrastructure) domain.
+Services in the AMI (Advanced Metering Infrastructure) domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

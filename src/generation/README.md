@@ -1,6 +1,6 @@
-# generation — GridForge
+﻿# generation â€” GridForge
 
-Services in the **generation** domain.
+Services in the generation domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

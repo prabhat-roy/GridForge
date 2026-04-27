@@ -1,8 +1,8 @@
-# charge-scheduler
+﻿# charge-scheduler
 
-Service in the **battery** domain of GridForge.
+Service in the battery domain of GridForge.
 
-**Language:** Go · **Port:** 50162
+Language: Go Â· Port: 50162
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/charge-scheduler/](../../../helm/charts/charge-scheduler/) — Helm chart
-- [manifests/battery/charge-scheduler/](../../../manifests/battery/charge-scheduler/) — Raw K8s manifests
+- [helm/charts/charge-scheduler/](../../../helm/charts/charge-scheduler/) â€” Helm chart
+- [manifests/battery/charge-scheduler/](../../../manifests/battery/charge-scheduler/) â€” Raw K8s manifests

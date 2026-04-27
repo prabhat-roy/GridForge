@@ -1,8 +1,8 @@
-# solar-service
+﻿# solar-service
 
-Service in the **renewable** domain of GridForge.
+Service in the renewable domain of GridForge.
 
-**Language:** Go · **Port:** 50060
+Language: Go Â· Port: 50060
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/solar-service/](../../../helm/charts/solar-service/) — Helm chart
-- [manifests/renewable/solar-service/](../../../manifests/renewable/solar-service/) — Raw K8s manifests
+- [helm/charts/solar-service/](../../../helm/charts/solar-service/) â€” Helm chart
+- [manifests/renewable/solar-service/](../../../manifests/renewable/solar-service/) â€” Raw K8s manifests

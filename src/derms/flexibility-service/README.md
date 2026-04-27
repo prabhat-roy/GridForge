@@ -1,8 +1,8 @@
-# flexibility-service
+﻿# flexibility-service
 
-Service in the **derms** domain of GridForge.
+Service in the derms domain of GridForge.
 
-**Language:** Go · **Port:** 50141
+Language: Go Â· Port: 50141
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/flexibility-service/](../../../helm/charts/flexibility-service/) — Helm chart
-- [manifests/derms/flexibility-service/](../../../manifests/derms/flexibility-service/) — Raw K8s manifests
+- [helm/charts/flexibility-service/](../../../helm/charts/flexibility-service/) â€” Helm chart
+- [manifests/derms/flexibility-service/](../../../manifests/derms/flexibility-service/) â€” Raw K8s manifests

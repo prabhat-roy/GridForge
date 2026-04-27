@@ -1,8 +1,8 @@
-# crew-dispatch
+﻿# crew-dispatch
 
-Service in the **workforce** domain of GridForge.
+Service in the workforce domain of GridForge.
 
-**Language:** Go · **Port:** 50261
+Language: Go Â· Port: 50261
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/crew-dispatch/](../../../helm/charts/crew-dispatch/) — Helm chart
-- [manifests/workforce/crew-dispatch/](../../../manifests/workforce/crew-dispatch/) — Raw K8s manifests
+- [helm/charts/crew-dispatch/](../../../helm/charts/crew-dispatch/) â€” Helm chart
+- [manifests/workforce/crew-dispatch/](../../../manifests/workforce/crew-dispatch/) â€” Raw K8s manifests

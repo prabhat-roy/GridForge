@@ -1,8 +1,8 @@
-# mdm-service
+﻿# mdm-service
 
-Service in the **ami** domain of GridForge.
+Service in the ami domain of GridForge.
 
-**Language:** Go · **Port:** 50102
+Language: Go Â· Port: 50102
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/mdm-service/](../../../helm/charts/mdm-service/) — Helm chart
-- [manifests/ami/mdm-service/](../../../manifests/ami/mdm-service/) — Raw K8s manifests
+- [helm/charts/mdm-service/](../../../helm/charts/mdm-service/) â€” Helm chart
+- [manifests/ami/mdm-service/](../../../manifests/ami/mdm-service/) â€” Raw K8s manifests

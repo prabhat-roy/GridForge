@@ -1,8 +1,8 @@
-# der-service
+﻿# der-service
 
-Service in the **derms** domain of GridForge.
+Service in the derms domain of GridForge.
 
-**Language:** Go · **Port:** 50140
+Language: Go Â· Port: 50140
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/der-service/](../../../helm/charts/der-service/) — Helm chart
-- [manifests/derms/der-service/](../../../manifests/derms/der-service/) — Raw K8s manifests
+- [helm/charts/der-service/](../../../helm/charts/der-service/) â€” Helm chart
+- [manifests/derms/der-service/](../../../manifests/derms/der-service/) â€” Raw K8s manifests

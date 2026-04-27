@@ -1,8 +1,8 @@
-# load-forecast
+﻿# load-forecast
 
-Service in the **analytics** domain of GridForge.
+Service in the analytics domain of GridForge.
 
-**Language:** Go · **Port:** 50280
+Language: Go Â· Port: 50280
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/load-forecast/](../../../helm/charts/load-forecast/) — Helm chart
-- [manifests/analytics/load-forecast/](../../../manifests/analytics/load-forecast/) — Raw K8s manifests
+- [helm/charts/load-forecast/](../../../helm/charts/load-forecast/) â€” Helm chart
+- [manifests/analytics/load-forecast/](../../../manifests/analytics/load-forecast/) â€” Raw K8s manifests

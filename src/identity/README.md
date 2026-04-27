@@ -1,6 +1,6 @@
-# identity — GridForge
+﻿# identity â€” GridForge
 
-Services in the **identity** domain.
+Services in the identity domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

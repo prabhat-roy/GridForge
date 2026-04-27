@@ -1,5 +1,5 @@
-# trader-bff
+﻿# trader-bff
 
 BFF for energy trader portal (Angular)
 
-**Domain:** ``platform`` · **Language:** go · **Port:** 50003
+Domain: ``platform`` Â· Language: go Â· Port: 50003

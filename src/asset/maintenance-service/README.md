@@ -1,8 +1,8 @@
-# maintenance-service
+﻿# maintenance-service
 
-Service in the **asset** domain of GridForge.
+Service in the asset domain of GridForge.
 
-**Language:** Go · **Port:** 50220
+Language: Go Â· Port: 50220
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/maintenance-service/](../../../helm/charts/maintenance-service/) — Helm chart
-- [manifests/asset/maintenance-service/](../../../manifests/asset/maintenance-service/) — Raw K8s manifests
+- [helm/charts/maintenance-service/](../../../helm/charts/maintenance-service/) â€” Helm chart
+- [manifests/asset/maintenance-service/](../../../manifests/asset/maintenance-service/) â€” Raw K8s manifests

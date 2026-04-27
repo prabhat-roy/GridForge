@@ -1,8 +1,8 @@
-# bid-service
+﻿# bid-service
 
-Service in the **trading** domain of GridForge.
+Service in the trading domain of GridForge.
 
-**Language:** Go · **Port:** 50120
+Language: Go Â· Port: 50120
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/bid-service/](../../../helm/charts/bid-service/) — Helm chart
-- [manifests/trading/bid-service/](../../../manifests/trading/bid-service/) — Raw K8s manifests
+- [helm/charts/bid-service/](../../../helm/charts/bid-service/) â€” Helm chart
+- [manifests/trading/bid-service/](../../../manifests/trading/bid-service/) â€” Raw K8s manifests

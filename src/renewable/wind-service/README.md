@@ -1,8 +1,8 @@
-# wind-service
+﻿# wind-service
 
-Service in the **renewable** domain of GridForge.
+Service in the renewable domain of GridForge.
 
-**Language:** Go · **Port:** 50061
+Language: Go Â· Port: 50061
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/wind-service/](../../../helm/charts/wind-service/) — Helm chart
-- [manifests/renewable/wind-service/](../../../manifests/renewable/wind-service/) — Raw K8s manifests
+- [helm/charts/wind-service/](../../../helm/charts/wind-service/) â€” Helm chart
+- [manifests/renewable/wind-service/](../../../manifests/renewable/wind-service/) â€” Raw K8s manifests

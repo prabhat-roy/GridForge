@@ -1,6 +1,6 @@
-# transmission — GridForge
+﻿# transmission â€” GridForge
 
-Services in the **transmission** (and distribution) domain.
+Services in the transmission (and distribution) domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

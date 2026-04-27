@@ -1,8 +1,8 @@
-# offset-service
+﻿# offset-service
 
-Service in the **carbon** domain of GridForge.
+Service in the carbon domain of GridForge.
 
-**Language:** Go · **Port:** 50242
+Language: Go Â· Port: 50242
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/offset-service/](../../../helm/charts/offset-service/) — Helm chart
-- [manifests/carbon/offset-service/](../../../manifests/carbon/offset-service/) — Raw K8s manifests
+- [helm/charts/offset-service/](../../../helm/charts/offset-service/) â€” Helm chart
+- [manifests/carbon/offset-service/](../../../manifests/carbon/offset-service/) â€” Raw K8s manifests

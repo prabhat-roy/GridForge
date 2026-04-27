@@ -1,8 +1,8 @@
-# dispatch-service
+﻿# dispatch-service
 
-Service in the **generation** domain of GridForge.
+Service in the generation domain of GridForge.
 
-**Language:** Go · **Port:** 50040
+Language: Go Â· Port: 50040
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/dispatch-service/](../../../helm/charts/dispatch-service/) — Helm chart
-- [manifests/generation/dispatch-service/](../../../manifests/generation/dispatch-service/) — Raw K8s manifests
+- [helm/charts/dispatch-service/](../../../helm/charts/dispatch-service/) â€” Helm chart
+- [manifests/generation/dispatch-service/](../../../manifests/generation/dispatch-service/) â€” Raw K8s manifests

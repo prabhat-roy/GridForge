@@ -1,5 +1,5 @@
-# alarm-service
+﻿# alarm-service
 
 Alarm + event correlation engine
 
-**Domain:** ``grid-ops`` · **Language:** go · **Port:** 50043
+Domain: ``grid-ops`` Â· Language: go Â· Port: 50043

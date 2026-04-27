@@ -1,8 +1,8 @@
-# imbalance-service
+﻿# imbalance-service
 
-Service in the **trading** domain of GridForge.
+Service in the trading domain of GridForge.
 
-**Language:** Go · **Port:** 50122
+Language: Go Â· Port: 50122
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/imbalance-service/](../../../helm/charts/imbalance-service/) — Helm chart
-- [manifests/trading/imbalance-service/](../../../manifests/trading/imbalance-service/) — Raw K8s manifests
+- [helm/charts/imbalance-service/](../../../helm/charts/imbalance-service/) â€” Helm chart
+- [manifests/trading/imbalance-service/](../../../manifests/trading/imbalance-service/) â€” Raw K8s manifests

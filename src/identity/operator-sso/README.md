@@ -1,5 +1,5 @@
-# operator-sso
+﻿# operator-sso
 
 Operator SAML/OIDC SSO with MFA enforcement
 
-**Domain:** ``identity`` · **Language:** rust · **Port:** 50021
+Domain: ``identity`` Â· Language: rust Â· Port: 50021

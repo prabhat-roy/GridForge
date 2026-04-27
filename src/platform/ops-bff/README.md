@@ -1,8 +1,8 @@
-# ops-bff
+﻿# ops-bff
 
 BFF for grid-ops dashboard (React)
 
-**Domain:** ``platform`` · **Language:** go · **Port:** 50001
+Domain: ``platform`` Â· Language: go Â· Port: 50001
 
 ## Run locally
 
@@ -12,8 +12,8 @@ make run
 
 ## Endpoints
 
-- ``GET /healthz`` — health check, returns ``{ "status": "ok" }``
+- ``GET /healthz`` â€” health check, returns ``{ "status": "ok" }``
 
 ## See also
 
-- [../README.md](../README.md) — domain overview
+- [../README.md](../README.md) â€” domain overview

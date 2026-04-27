@@ -1,8 +1,8 @@
-# switching-order
+﻿# switching-order
 
-Service in the **transmission** domain of GridForge.
+Service in the transmission domain of GridForge.
 
-**Language:** Go · **Port:** 50083
+Language: Go Â· Port: 50083
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/switching-order/](../../../helm/charts/switching-order/) — Helm chart
-- [manifests/transmission/switching-order/](../../../manifests/transmission/switching-order/) — Raw K8s manifests
+- [helm/charts/switching-order/](../../../helm/charts/switching-order/) â€” Helm chart
+- [manifests/transmission/switching-order/](../../../manifests/transmission/switching-order/) â€” Raw K8s manifests

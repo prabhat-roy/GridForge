@@ -1,6 +1,6 @@
-# ev-charging — GridForge
+﻿# ev-charging â€” GridForge
 
-Services in the **EV charging** domain.
+Services in the EV charging domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

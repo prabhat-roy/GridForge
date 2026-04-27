@@ -1,6 +1,6 @@
-# renewable — GridForge
+﻿# renewable â€” GridForge
 
-Services in the **renewable** domain.
+Services in the renewable domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

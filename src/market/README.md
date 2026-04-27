@@ -1,6 +1,6 @@
-# market — GridForge
+﻿# market â€” GridForge
 
-Services in the **market integration** domain.
+Services in the market integration domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

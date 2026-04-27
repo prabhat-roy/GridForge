@@ -1,6 +1,6 @@
-# workforce — GridForge
+﻿# workforce â€” GridForge
 
-Services in the **field workforce** domain.
+Services in the field workforce domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

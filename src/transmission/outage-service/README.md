@@ -1,8 +1,8 @@
-# outage-service
+﻿# outage-service
 
-Service in the **transmission** domain of GridForge.
+Service in the transmission domain of GridForge.
 
-**Language:** Go · **Port:** 50081
+Language: Go Â· Port: 50081
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/outage-service/](../../../helm/charts/outage-service/) — Helm chart
-- [manifests/transmission/outage-service/](../../../manifests/transmission/outage-service/) — Raw K8s manifests
+- [helm/charts/outage-service/](../../../helm/charts/outage-service/) â€” Helm chart
+- [manifests/transmission/outage-service/](../../../manifests/transmission/outage-service/) â€” Raw K8s manifests

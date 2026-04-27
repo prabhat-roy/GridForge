@@ -1,6 +1,6 @@
-# customer — GridForge
+﻿# customer â€” GridForge
 
-Services in the **customer** domain.
+Services in the customer domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

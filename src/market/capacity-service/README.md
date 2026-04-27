@@ -1,8 +1,8 @@
-# capacity-service
+﻿# capacity-service
 
-Service in the **market** domain of GridForge.
+Service in the market domain of GridForge.
 
-**Language:** Go · **Port:** 50302
+Language: Go Â· Port: 50302
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/capacity-service/](../../../helm/charts/capacity-service/) — Helm chart
-- [manifests/market/capacity-service/](../../../manifests/market/capacity-service/) — Raw K8s manifests
+- [helm/charts/capacity-service/](../../../helm/charts/capacity-service/) â€” Helm chart
+- [manifests/market/capacity-service/](../../../manifests/market/capacity-service/) â€” Raw K8s manifests

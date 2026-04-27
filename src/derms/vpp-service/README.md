@@ -1,8 +1,8 @@
-# vpp-service
+﻿# vpp-service
 
-Service in the **derms** domain of GridForge.
+Service in the derms domain of GridForge.
 
-**Language:** Go · **Port:** 50144
+Language: Go Â· Port: 50144
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/vpp-service/](../../../helm/charts/vpp-service/) — Helm chart
-- [manifests/derms/vpp-service/](../../../manifests/derms/vpp-service/) — Raw K8s manifests
+- [helm/charts/vpp-service/](../../../helm/charts/vpp-service/) â€” Helm chart
+- [manifests/derms/vpp-service/](../../../manifests/derms/vpp-service/) â€” Raw K8s manifests

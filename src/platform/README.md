@@ -1,6 +1,6 @@
-# platform — GridForge
+﻿# platform â€” GridForge
 
-Services in the **platform** domain.
+Services in the platform domain.
 
 | Service | Language | Port | Description |
 |---|---|---|---|

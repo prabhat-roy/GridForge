@@ -1,8 +1,8 @@
-# meter-service
+﻿# meter-service
 
-Service in the **ami** domain of GridForge.
+Service in the ami domain of GridForge.
 
-**Language:** Go · **Port:** 50100
+Language: Go Â· Port: 50100
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/meter-service/](../../../helm/charts/meter-service/) — Helm chart
-- [manifests/ami/meter-service/](../../../manifests/ami/meter-service/) — Raw K8s manifests
+- [helm/charts/meter-service/](../../../helm/charts/meter-service/) â€” Helm chart
+- [manifests/ami/meter-service/](../../../manifests/ami/meter-service/) â€” Raw K8s manifests

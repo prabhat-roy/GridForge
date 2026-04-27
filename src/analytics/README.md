@@ -1,6 +1,6 @@
-# analytics — GridForge
+﻿# analytics â€” GridForge
 
-Services in the **analytics & forecasting** domain (online services; batch jobs live in `analytics/`).
+Services in the analytics & forecasting domain (online services; batch jobs live in `analytics/`).
 
 | Service | Language | Port | Description |
 |---|---|---|---|

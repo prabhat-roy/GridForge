@@ -1,8 +1,8 @@
-# fault-service
+﻿# fault-service
 
-Service in the **transmission** domain of GridForge.
+Service in the transmission domain of GridForge.
 
-**Language:** Go · **Port:** 50082
+Language: Go Â· Port: 50082
 
 ## Run locally
 
@@ -12,9 +12,9 @@ make run
 
 ## Endpoints
 
-- `GET /healthz` — health check, returns `{ "status": "ok" }`
+- `GET /healthz` â€” health check, returns `{ "status": "ok" }`
 
 ## See also
 
-- [helm/charts/fault-service/](../../../helm/charts/fault-service/) — Helm chart
-- [manifests/transmission/fault-service/](../../../manifests/transmission/fault-service/) — Raw K8s manifests
+- [helm/charts/fault-service/](../../../helm/charts/fault-service/) â€” Helm chart
+- [manifests/transmission/fault-service/](../../../manifests/transmission/fault-service/) â€” Raw K8s manifests

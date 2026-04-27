@@ -1,5 +1,5 @@
-# customer-sso
+﻿# customer-sso
 
 Customer OIDC SSO
 
-**Domain:** ``identity`` · **Language:** rust · **Port:** 50022
+Domain: ``identity`` Â· Language: rust Â· Port: 50022
