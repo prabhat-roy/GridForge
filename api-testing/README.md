@@ -1,6 +1,4 @@
-# Api Testing — GridForge
-
-API tests — Hurl flow tests + Spectral OpenAPI linting.
-
-> Skeleton placeholder. Content will be added as the project takes shape.
-> See [../README.md](../README.md) for the GridForge project overview.
+﻿# API testing for GridForge
+- `pact/` — consumer-driven contract test (api-gateway → identity-service) + provider verifier script
+- `hurl/` — version-controlled HTTP test flows (health, auth) + runner
+- `spectral/` — custom OpenAPI ruleset (kebab-case paths, mandatory 4xx schemas) + runner

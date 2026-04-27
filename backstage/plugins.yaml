@@ -1,0 +1,6 @@
+﻿plugins:
+  - { id: tech-radar, config: { url: https://github.com/prabhat-roy/GridForge/raw/main/backstage/tech-radar.json } }
+  - { id: lighthouse, config: { baseUrl: https://lhci.gridforge.internal } }
+  - { id: opencost,   config: { baseUrl: https://opencost.gridforge.internal } }
+  - { id: argocd,     config: { url: https://argocd.gridforge.internal, token: "${ARGOCD_TOKEN}" } }
+  - { id: kubernetes, config: { clusters: [{ name: gridforge-aws, url: https://eks.gridforge.aws.internal }, { name: gridforge-gcp, url: https://gke.gridforge.gcp.internal }, { name: gridforge-azure, url: https://aks.gridforge.azure.internal }] } }

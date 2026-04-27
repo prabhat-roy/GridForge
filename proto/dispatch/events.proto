@@ -1,0 +1,8 @@
+﻿syntax = "proto3";
+package gridforge.dispatch.v1;
+option go_package = "github.com/prabhat-roy/GridForge/proto/dispatch/v1;dispatch_v1";
+import "google/protobuf/timestamp.proto";
+
+message DispatchCreatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message DispatchUpdatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message DispatchDeletedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }

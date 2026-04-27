@@ -1,6 +1,4 @@
-# Analytics — GridForge
-
-Analytics layer — Airflow DAGs, dbt models, Spark jobs.
-
-> Skeleton placeholder. Content will be added as the project takes shape.
-> See [../README.md](../README.md) for the GridForge project overview.
+﻿# Analytics for GridForge
+- `dbt/` — dbt project with staging + marts models, dual targets (Postgres dev, Trino+Iceberg prod)
+- `airflow/dags/` — daily_etl, weekly_retrain, hourly data_quality DAGs
+- `spark/jobs/` — PySpark batch jobs (daily aggregation, KMeans user segmentation)

@@ -1,0 +1,8 @@
+﻿syntax = "proto3";
+package gridforge.scada.v1;
+option go_package = "github.com/prabhat-roy/GridForge/proto/scada/v1;scada_v1";
+import "google/protobuf/timestamp.proto";
+
+message ScadaCreatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message ScadaUpdatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message ScadaDeletedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }

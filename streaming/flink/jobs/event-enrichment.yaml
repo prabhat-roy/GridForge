@@ -1,0 +1,10 @@
+﻿apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata: { name: gridforge-event-enrichment, namespace: gridforge }
+spec:
+  deploymentName: gridforge-flink
+  job:
+    jarURI: s3://gridforge-flink-jobs/event-enrichment.jar
+    parallelism: 4
+    upgradeMode: savepoint
+    args: ["--source-topic", "gridforge.cdc.public.events", "--sink-topic", "gridforge.events.enriched"]

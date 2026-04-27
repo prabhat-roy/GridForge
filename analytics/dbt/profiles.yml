@@ -1,0 +1,19 @@
+﻿gridforge:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres.gridforge.svc
+      user: dbt
+      password: "{{ env_var('DBT_PASSWORD') }}"
+      port: 5432
+      dbname: gridforge_warehouse
+      schema: public
+      threads: 8
+    prod:
+      type: trino
+      host: trino.gridforge.svc
+      port: 8080
+      catalog: iceberg
+      schema: gridforge_mart
+      threads: 16

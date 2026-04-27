@@ -1,0 +1,8 @@
+﻿syntax = "proto3";
+package gridforge.reliability.v1;
+option go_package = "github.com/prabhat-roy/GridForge/proto/reliability/v1;reliability_v1";
+import "google/protobuf/timestamp.proto";
+
+message ReliabilityCreatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message ReliabilityUpdatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message ReliabilityDeletedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }

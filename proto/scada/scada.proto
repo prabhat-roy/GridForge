@@ -1,0 +1,38 @@
+﻿syntax = "proto3";
+
+package gridforge.scada.v1;
+
+option go_package = "github.com/prabhat-roy/GridForge/proto/scada/v1;scada_v1";
+option java_multiple_files = true;
+option java_package = "com.gridforge.scada.v1";
+
+import "common/types.proto";
+import "google/protobuf/timestamp.proto";
+
+// scada service for GridForge
+service ScadaService {
+  rpc Get(GetRequest) returns (GetResponse);
+  rpc List(ListRequest) returns (ListResponse);
+  rpc Create(CreateRequest) returns (CreateResponse);
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
+}
+
+message Scada {
+  string id = 1;
+  string tenant_id = 2;
+  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp updated_at = 4;
+  map<string, string> attributes = 5;
+}
+
+message GetRequest    { string id = 1; }
+message GetResponse   { Scada entity = 1; }
+message ListRequest   { string tenant_id = 1; common.Pagination page = 2; }
+message ListResponse  { repeated Scada items = 1; common.Pagination page = 2; }
+message CreateRequest { Scada entity = 1; }
+message CreateResponse{ Scada entity = 1; }
+message UpdateRequest { Scada entity = 1; }
+message UpdateResponse{ Scada entity = 1; }
+message DeleteRequest { string id = 1; }
+message DeleteResponse{ bool ok = 1; }

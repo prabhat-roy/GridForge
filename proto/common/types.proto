@@ -1,0 +1,10 @@
+﻿syntax = "proto3";
+package gridforge.common;
+option go_package = "github.com/prabhat-roy/GridForge/proto/common;common";
+option java_multiple_files = true;
+option java_package = "com.gridforge.common";
+
+message Money     { string currency = 1; int64 minor_units = 2; }
+message Address   { string street = 1; string city = 2; string region = 3; string country = 4; string postal_code = 5; }
+message Pagination{ int32 page = 1; int32 page_size = 2; int64 total = 3; string next_cursor = 4; }
+message Tenant    { string id = 1; string name = 2; string region = 3; }

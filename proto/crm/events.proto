@@ -1,0 +1,8 @@
+﻿syntax = "proto3";
+package gridforge.crm.v1;
+option go_package = "github.com/prabhat-roy/GridForge/proto/crm/v1;crm_v1";
+import "google/protobuf/timestamp.proto";
+
+message CrmCreatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message CrmUpdatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message CrmDeletedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }

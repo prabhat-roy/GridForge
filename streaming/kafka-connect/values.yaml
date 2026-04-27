@@ -1,0 +1,9 @@
+﻿image: { repository: confluentinc/cp-kafka-connect, tag: 7.7.1 }
+replicas: 3
+config:
+  bootstrap.servers: kafka.gridforge.svc:9092
+  group.id: gridforge-connect
+  config.storage.topic: gridforge.connect.configs
+  offset.storage.topic: gridforge.connect.offsets
+  status.storage.topic: gridforge.connect.status
+  plugin.path: /usr/share/connectors,/usr/share/confluent-hub-components

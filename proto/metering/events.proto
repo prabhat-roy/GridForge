@@ -1,0 +1,8 @@
+﻿syntax = "proto3";
+package gridforge.metering.v1;
+option go_package = "github.com/prabhat-roy/GridForge/proto/metering/v1;metering_v1";
+import "google/protobuf/timestamp.proto";
+
+message MeteringCreatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message MeteringUpdatedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }
+message MeteringDeletedEvent { string id = 1; string tenant_id = 2; google.protobuf.Timestamp ts = 3; }

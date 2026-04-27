@@ -1,0 +1,10 @@
+﻿apiVersion: flink.apache.org/v1beta1
+kind: FlinkSessionJob
+metadata: { name: gridforge-aggregation, namespace: gridforge }
+spec:
+  deploymentName: gridforge-flink
+  job:
+    jarURI: s3://gridforge-flink-jobs/aggregation.jar
+    parallelism: 8
+    upgradeMode: savepoint
+    args: ["--source-topic", "gridforge.events.enriched", "--sink-topic", "gridforge.metrics.aggregated", "--window", "5m"]

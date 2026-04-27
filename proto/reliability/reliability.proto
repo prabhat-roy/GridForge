@@ -1,0 +1,38 @@
+﻿syntax = "proto3";
+
+package gridforge.reliability.v1;
+
+option go_package = "github.com/prabhat-roy/GridForge/proto/reliability/v1;reliability_v1";
+option java_multiple_files = true;
+option java_package = "com.gridforge.reliability.v1";
+
+import "common/types.proto";
+import "google/protobuf/timestamp.proto";
+
+// reliability service for GridForge
+service ReliabilityService {
+  rpc Get(GetRequest) returns (GetResponse);
+  rpc List(ListRequest) returns (ListResponse);
+  rpc Create(CreateRequest) returns (CreateResponse);
+  rpc Update(UpdateRequest) returns (UpdateResponse);
+  rpc Delete(DeleteRequest) returns (DeleteResponse);
+}
+
+message Reliability {
+  string id = 1;
+  string tenant_id = 2;
+  google.protobuf.Timestamp created_at = 3;
+  google.protobuf.Timestamp updated_at = 4;
+  map<string, string> attributes = 5;
+}
+
+message GetRequest    { string id = 1; }
+message GetResponse   { Reliability entity = 1; }
+message ListRequest   { string tenant_id = 1; common.Pagination page = 2; }
+message ListResponse  { repeated Reliability items = 1; common.Pagination page = 2; }
+message CreateRequest { Reliability entity = 1; }
+message CreateResponse{ Reliability entity = 1; }
+message UpdateRequest { Reliability entity = 1; }
+message UpdateResponse{ Reliability entity = 1; }
+message DeleteRequest { string id = 1; }
+message DeleteResponse{ bool ok = 1; }

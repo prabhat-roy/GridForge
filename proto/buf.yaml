@@ -1,0 +1,8 @@
+﻿version: v2
+modules:
+  - path: .
+deps: []
+lint:
+  use: [DEFAULT]
+breaking:
+  use: [FILE]
